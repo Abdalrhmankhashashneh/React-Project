@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Floor from "./pages/Floor";
+
 //import your components here (if you have any)
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -25,11 +27,12 @@ export default function AppRoutes() {
     const [state, setState] = useState({
         isLoggedIn: false,
         user: {
-            name: "",
-            email: "",
-            password: "",
-            confirmPassword: ""
+            name: "abood",
+            email: "smsmspy@gmail.com",
+            password: "123456",
+            confirmPassword: "123456"
         }
+
     });
 
     useEffect(() => {
@@ -52,6 +55,7 @@ export default function AppRoutes() {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/floor" element={<Floor />} />
                 </Routes>
 
             </AppContext.Provider>

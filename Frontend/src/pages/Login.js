@@ -33,16 +33,19 @@ export default function Login() {
         }
     }
     return (
-        <div className="container">
-            <h1>Login</h1>
+        <div className="container mt-5 col ">
 
-            <form onSubmit={handelSubmit}>
-                <label htmlFor="username">Username</label>
-                <input type="text" id="username" name="username" onChange={handelChange} />
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" onChange={handelChange} name="password" />
-                <button type="submit">Submit</button>
-            </form>
+            <div className="container mt-5 col " >
+                <h1>Login</h1>
+
+                <form onSubmit={handelSubmit}>
+                    <label htmlFor="username">Username</label>
+                    <input type="text" id="username" name="username" onChange={handelChange} />
+                    <label htmlFor="password">Password</label>
+                    <input type="password" id="password" onChange={handelChange} name="password" />
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     );
 } //end Login
