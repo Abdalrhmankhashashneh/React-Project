@@ -12,8 +12,22 @@ export default function Nav() {
                         <li><NavLink className="nav-link scrollto active" to="/">Home</NavLink></li>
                         <li><NavLink className="nav-link scrollto" to="/about">About</NavLink></li>
                         <li><NavLink className="nav-link scrollto" to="/login">Login</NavLink></li>
+                        <li><NavLink className="nav-link scrollto" to="/contact">Contact</NavLink></li>
+                        <li><NavLink className="nav-link scrollto" to="/floor">floor</NavLink></li>
+                    </ul>
+                    <i className="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+                <NavLink to="/" className="book-a-table-btn scrollto d-none d-lg-flex">Book a table</NavLink>
 
-                        {/* <li className="dropdown"><NavLink to="/"><span>Drop Down</span> <i className="bi bi-chevron-down"></i></NavLink>
+            </div>
+        </header>
+    );
+}
+
+
+
+
+{/* <li className="dropdown"><NavLink to="/"><span>Drop Down</span> <i className="bi bi-chevron-down"></i></NavLink>
                         <ul>
                             <li><NavLink to="/">Drop Down 1</NavLink></li>
                             <li className="dropdown"><NavLink to="/"><span>Deep Drop Down</span> <i className="bi bi-chevron-right"></i></NavLink>
@@ -30,13 +44,3 @@ export default function Nav() {
                             <li><NavLink to="/">Drop Down 4</NavLink></li>
                         </ul>
                     </li> */}
-                        <li><NavLink className="nav-link scrollto" to="/contact">Contact</NavLink></li>
-                    </ul>
-                    <i className="bi bi-list mobile-nav-toggle"></i>
-                </nav>
-                <NavLink to="/" className="book-a-table-btn scrollto d-none d-lg-flex">Book a table</NavLink>
-
-            </div>
-        </header>
-    );
-}   
