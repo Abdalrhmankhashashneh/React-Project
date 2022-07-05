@@ -14,6 +14,15 @@ export default function Nav() {
                 <li>
                     <NavLink to="/contact">Contact</NavLink>
                 </li>
+                <li>
+                    <NavLink to="/profile">Profile </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/login">Login</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/register">Register</NavLink>
+                </li>
             </ul>
         </nav>
     );
