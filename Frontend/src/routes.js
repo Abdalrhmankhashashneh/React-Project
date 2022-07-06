@@ -24,6 +24,7 @@ import useAppContext, { AppContext } from "./Hooks/appContext";
 export default function AppRoutes() {
 
     //create your global state here (e.g. const [state, setState] = useState({});)
+
     const [state, setState] = useState({
         isLoggedIn: false,
         user: {
