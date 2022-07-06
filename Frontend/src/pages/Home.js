@@ -9,7 +9,7 @@ function Home() {
     <>
 
 
-      <div id="topbar" className="d-flex align-items-center fixed-top">
+      {/* <div id="topbar" className="d-flex align-items-center fixed-top">
         <div className="container d-flex justify-content-center justify-content-md-between">
 
           <div className="contact-info d-flex align-items-center">
@@ -24,7 +24,7 @@ function Home() {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
 
 
 

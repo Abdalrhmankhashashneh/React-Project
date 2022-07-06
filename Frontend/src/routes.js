@@ -29,6 +29,7 @@ export default function AppRoutes() {
         user: {
             name: "abood",
             email: "smsmspy@gmail.com",
+            phone: "",
             password: "123456",
             confirmPassword: "123456"
         }

@@ -178,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  top: 40px;
+  /* top: 40px; */
 }
 
 #header.header-scrolled {
@@ -935,7 +935,9 @@ section {
 }
 
 .menu .menu-content::after {
-  content: "......................................................................" "...................................................................." "....................................................................";
+  content: "......................................................................"
+ "...................................................................."
+ "....................................................................";
   position: absolute;
   left: 20px;
   right: 0;
@@ -1725,3 +1727,25 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  /* background: rgba(12, 11, 9, 0.6); */
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: rgba(12, 11, 9, 0.6); */
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: rgba(12, 11, 9, 0.6); */
+  }
+  .gradient-custom-4 {
+  /* fallback for old browsers */
+  /* background: rgba(12, 11, 9, 0.6); */
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1)); */
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1)) */
+  }
