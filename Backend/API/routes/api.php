@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\User_c;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('users/search/{name}', [User_c::class, 'search']);
+Route::group(['middleware' => [ 'auth:sanctum' ]], function () {
+    Route::resource('users', User_c::class);
 });
