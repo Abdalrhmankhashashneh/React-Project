@@ -35,7 +35,7 @@ export default function AppRoutes() {
         }
 
     });
-    
+
     const userProvider = useMemo(()=>({userState, setUser}), [userState, setUser])
 
     const registerHandler = async (user) => {
