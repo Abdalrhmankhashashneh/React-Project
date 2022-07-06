@@ -17,7 +17,7 @@ export default function Login() {
     const handelSubmit = (e) => {
         e.preventDefault();
         console.log(username, password);
-        if (username === state.name && password === state.password) {
+        if (username === state.user.email && password === state.user.password) {
             setState({
                 ...state,
                 isLoggedIn: true
