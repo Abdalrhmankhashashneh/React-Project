@@ -8,24 +8,7 @@ function Home() {
   return (
     <>
 
-
-      {/* <div id="topbar" className="d-flex align-items-center fixed-top">
-        <div className="container d-flex justify-content-center justify-content-md-between">
-
-          <div className="contact-info d-flex align-items-center">
-            <i className="bi bi-phone d-flex align-items-center"><span>+1 5589 55488 55</span></i>
-            <i className="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 11AM - 23PM</span></i>
-          </div>
-
-          <div className="languages d-none d-md-flex align-items-center">
-            <ul>
-              <li>En</li>
-              <li><a href="#">De</a></li>
-            </ul>
-          </div>
-        </div>
-      </div> */}
-
+ 
 
 
       <section id="hero" className="d-flex align-items-center">
@@ -51,7 +34,7 @@ function Home() {
       <main id="main">
 
 
-        <section id="about" className="about">
+        {/* <section id="about" className="about">
           <div className="container" data-aos="fade-up">
 
             <div className="row">
@@ -80,7 +63,7 @@ function Home() {
             </div>
 
           </div>
-        </section>
+        </section> */}
 
 
         <section id="why-us" className="why-us">
@@ -123,121 +106,7 @@ function Home() {
         </section>
 
 
-        <section id="menu" className="menu section-bg">
-          <div className="container" data-aos="fade-up">
-
-            <div className="section-title">
-              <h2>Menu</h2>
-              <p>Check Our Tasty Menu</p>
-            </div>
-
-            <div className="row" data-aos="fade-up" data-aos-delay="100">
-              <div className="col-lg-12 d-flex justify-content-center">
-                <ul id="menu-flters">
-                  <li data-filter="*" className="filter-active">All</li>
-                  <li data-filter=".filter-starters">Starters</li>
-                  <li data-filter=".filter-salads">Salads</li>
-                  <li data-filter=".filter-specialty">Specialty</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="row menu-container" data-aos="fade-up" data-aos-delay="200">
-
-              <div className="col-lg-6 menu-item filter-starters">
-                <img src="assets/img/menu/lobster-bisque.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Lobster Bisque</a><span>$5.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-specialty">
-                <img src="assets/img/menu/bread-barrel.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Bread Barrel</a><span>$6.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-starters">
-                <img src="assets/img/menu/cake.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Crab Cake</a><span>$7.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  A delicate crab cake served on a toasted roll with lettuce and tartar sauce
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-salads">
-                <img src="assets/img/menu/caesar.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Caesar Selections</a><span>$8.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-specialty">
-                <img src="assets/img/menu/tuscan-grilled.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Tuscan Grilled</a><span>$9.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Grilled chicken with provolone, artichoke hearts, and roasted red pesto
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-starters">
-                <img src="assets/img/menu/mozzarella.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Mozzarella Stick</a><span>$4.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-salads">
-                <img src="assets/img/menu/greek-salad.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Greek Salad</a><span>$9.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Fresh spinach, crisp romaine, tomatoes, and Greek olives
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-salads">
-                <img src="assets/img/menu/spinach-salad.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Spinach Salad</a><span>$9.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-specialty">
-                <img src="assets/img/menu/lobster-roll.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Lobster Roll</a><span>$12.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
+        
 
 
         <section id="specials" className="specials">
@@ -437,7 +306,126 @@ function Home() {
 
 
 
-        <section id="book-a-table" className="book-a-table">
+
+        <section id="menu" className="menu section-bg">
+          <div className="container" data-aos="fade-up">
+
+            <div className="section-title">
+              <h2>Menu</h2>
+              <p>Check Our Tasty Menu</p>
+            </div>
+
+            <div className="row" data-aos="fade-up" data-aos-delay="100">
+              <div className="col-lg-12 d-flex justify-content-center">
+                <ul id="menu-flters">
+                  <li data-filter="*" className="filter-active">All</li>
+                  <li data-filter=".filter-starters">Starters</li>
+                  <li data-filter=".filter-salads">Salads</li>
+                  <li data-filter=".filter-specialty">Specialty</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="row menu-container" data-aos="fade-up" data-aos-delay="200">
+
+              <div className="col-lg-6 menu-item filter-starters">
+                <img src="assets/img/menu/lobster-bisque.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Lobster Bisque</a><span>$5.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Lorem, deren, trataro, filede, nerada
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-specialty">
+                <img src="assets/img/menu/bread-barrel.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Bread Barrel</a><span>$6.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Lorem, deren, trataro, filede, nerada
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-starters">
+                <img src="assets/img/menu/cake.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Crab Cake</a><span>$7.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  A delicate crab cake served on a toasted roll with lettuce and tartar sauce
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-salads">
+                <img src="assets/img/menu/caesar.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Caesar Selections</a><span>$8.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Lorem, deren, trataro, filede, nerada
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-specialty">
+                <img src="assets/img/menu/tuscan-grilled.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Tuscan Grilled</a><span>$9.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Grilled chicken with provolone, artichoke hearts, and roasted red pesto
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-starters">
+                <img src="assets/img/menu/mozzarella.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Mozzarella Stick</a><span>$4.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Lorem, deren, trataro, filede, nerada
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-salads">
+                <img src="assets/img/menu/greek-salad.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Greek Salad</a><span>$9.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Fresh spinach, crisp romaine, tomatoes, and Greek olives
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-salads">
+                <img src="assets/img/menu/spinach-salad.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Spinach Salad</a><span>$9.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-specialty">
+                <img src="assets/img/menu/lobster-roll.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Lobster Roll</a><span>$12.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+
+
+         {/* <section id="book-a-table" className="book-a-table">
           <div className="container" data-aos="fade-up">
 
             <div className="section-title">
@@ -482,10 +470,10 @@ function Home() {
                 <div className="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
               </div>
               <div className="text-center"><button type="submit">Book a Table</button></div>
-            </form>
+            </form> 
 
           </div>
-        </section>
+        </section> */}
         <section id="testimonials" className="testimonials section-bg">
           <div className="container" data-aos="fade-up">
 
@@ -569,7 +557,7 @@ function Home() {
 
 
 
-        <section id="gallery" className="gallery">
+        {/* <section id="gallery" className="gallery">
 
           <div className="container" data-aos="fade-up">
             <div className="section-title">
@@ -649,9 +637,9 @@ function Home() {
             </div>
 
           </div>
-        </section>
+        </section> */}
 
-
+{/* 
         <section id="chefs" className="chefs">
           <div className="container" data-aos="fade-up">
 
@@ -719,8 +707,8 @@ function Home() {
             </div>
 
           </div>
-        </section>
-        <section id="contact" className="contact">
+        </section> */}
+        {/* <section id="contact" className="contact">
           <div className="container" data-aos="fade-up">
 
             <div className="section-title">
@@ -798,11 +786,11 @@ function Home() {
             </div>
 
           </div>
-        </section>
+        </section> */}
 
       </main>
 
-      <footer id="footer">
+      {/* <footer id="footer">
         <div className="footer-top">
           <div className="container">
             <div className="row">
@@ -869,7 +857,7 @@ function Home() {
 
           </div>
         </div>
-      </footer>
+      </footer> */}
       {/* <div id="preloader"></div>
       <a href="#" className="back-to-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a> */}
 
