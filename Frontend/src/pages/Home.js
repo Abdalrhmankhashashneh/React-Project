@@ -1,8 +1,9 @@
 import { useContext } from 'react';
-
+import { Link } from "react-router-dom";
 import { AppContext } from '../Hooks/appContext';
 
 function Home() {
+  
   const { state } = useContext(AppContext);
   console.log(state);
   return (
@@ -92,29 +93,35 @@ function Home() {
             </div>
 
             <div className="row">
-
+              
               <div className="col-lg-4">
+              <Link to={{pathname:`/floor/${2}`}} >
                 <div className="box" data-aos="zoom-in" data-aos-delay="100">
-                  <span>01</span>
+                  <span>VIP</span>
                   <h4>Lorem Ipsum</h4>
                   <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
                 </div>
+                </Link>
               </div>
 
               <div className="col-lg-4 mt-4 mt-lg-0">
+              <Link to="/floor">
                 <div className="box" data-aos="zoom-in" data-aos-delay="200">
-                  <span>02</span>
+                  <span>General</span>
                   <h4>Repellat Nihil</h4>
                   <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
                 </div>
+                </Link>
               </div>
 
               <div className="col-lg-4 mt-4 mt-lg-0">
+              <Link to="/floor">
                 <div className="box" data-aos="zoom-in" data-aos-delay="300">
-                  <span>03</span>
+                  <span>Family</span>
                   <h4> Ad ad velit qui</h4>
                   <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
                 </div>
+                </Link>
               </div>
 
             </div>

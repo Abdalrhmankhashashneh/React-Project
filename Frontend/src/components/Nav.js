@@ -17,7 +17,7 @@ export default function Nav() {
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle"></i>
                 </nav>
-                <NavLink to="/" className="book-a-table-btn scrollto d-none d-lg-flex">Book a table</NavLink>
+                {/* <NavLink to="/" className="book-a-table-btn scrollto d-none d-lg-flex">Book a table</NavLink> */}
 
             </div>
         </header>
