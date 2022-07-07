@@ -55,10 +55,6 @@ export default function AppRoutes() {
             method: 'post',
             url: 'http://127.0.0.1:8000/api/users',
             // headers: {Authorization: 'Bearer ' + 'token'},
-<<<<<<< HEAD
-            headers: { Accept: 'application/json' },
-=======
->>>>>>> 1079d86e085252d2e6c3e603efcbbd1556895625
             data: user
         }).then((res) => {
             if (res.data.status === 200) {
@@ -73,14 +69,9 @@ export default function AppRoutes() {
                     title: `${res.data.message}`,
                     showConfirmButton: false,
                     timer: 1500
-<<<<<<< HEAD
                 })
                 setUser({
-                    isLoggedIn: true,
-=======
-                  })
-                  setUser( {isLoggedIn: false,
->>>>>>> 1079d86e085252d2e6c3e603efcbbd1556895625
+                    isLoggedIn: false,
                     user: {
                         name: "",
                         email: "",
