@@ -12,12 +12,13 @@ export default function Nav() {
                         <li><NavLink className="nav-link scrollto active" to="/">Home</NavLink></li>
                         <li><NavLink className="nav-link scrollto" to="/about">About</NavLink></li>
                         <li><NavLink className="nav-link scrollto" to="/login">Login</NavLink></li>
+                        <li><NavLink className="nav-link scrollto" to="/register">Register</NavLink></li>
                         <li><NavLink className="nav-link scrollto" to="/contact">Contact</NavLink></li>
                         <li><NavLink className="nav-link scrollto" to="/floor">floor</NavLink></li>
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle"></i>
                 </nav>
-                {/* <NavLink to="/" className="book-a-table-btn scrollto d-none d-lg-flex">Book a table</NavLink> */}
+                {/* <NavLink to="/floor" className="book-a-table-btn scrollto d-none d-lg-flex">Book a table</NavLink> */}
 
             </div>
         </header>

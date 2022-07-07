@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\User_c;
+use App\Http\Controllers\Auth_c;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+// Route::post('users/register', [Auth_c::class ,'register']);
+Route::get('users/search/{name}', [User_c::class, 'search']);
+Route::post('/users', [User_c::class, 'store']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => [ 'auth:sanctum' ]], function () {
+    Route::post('users/logout', [Auth_c::class ,'logout']);
 });
