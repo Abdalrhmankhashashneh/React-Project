@@ -13,9 +13,13 @@ class floor_type_c extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $floor_types = floor_type::all();
         return response()->json($floor_types);
 
+=======
+        
+>>>>>>> cafa78a94d7fdbeef605de7f227bb1c3c73951c2
     }
 
     /**
