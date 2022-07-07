@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('users/register', [Auth_c::class ,'register']);
+// Route::post('users/register', [Auth_c::class ,'register']);
 Route::get('users/search/{name}', [User_c::class, 'search']);
-// Route::post('/users', [User_c::class, 'store']);
+Route::post('/users', [User_c::class, 'store']);
 
 Route::group(['middleware' => [ 'auth:sanctum' ]], function () {
     Route::post('users/logout', [Auth_c::class ,'logout']);
