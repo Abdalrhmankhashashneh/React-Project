@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class User_c extends Controller
 {
@@ -25,13 +27,35 @@ class User_c extends Controller
      */
     public function store(Request $request)
     {
-        $validation = $request->validate([
-            'name' => 'required',
+        $validator = Validator::make($request->all(),[
+            'name' => 'required|regex:/^[a-z ]+$/i',
             'email' => 'required|email|unique:users',
-            'phone' => 'required|unique:users',
-            'password' => 'required|min:6',
+            'phone' => 'required|unique:users|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'password' => ['required', 'confirmed', 'min:8', 'regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/'],
         ]);
-        return response()->json(User::create($request->all()));
+
+        if($validator->fails()){
+            return response()->json(['validation_errors' => $validator->errors()]);
+        }else {
+
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->phone = $request->phone;
+            $user->password = Hash::make($request->password);
+            $user->save();
+
+            // $token = $user->createToken($user->email.'_Token')->plainTextToken;
+
+            return response()->json([
+                'status' => 200,
+                // 'token' => $token,
+                'user' => $user,
+                'message' => 'Registration successful'
+            ]);
+        }
+
+
     }
 
     /**

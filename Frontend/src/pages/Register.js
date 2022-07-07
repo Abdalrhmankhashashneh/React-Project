@@ -15,27 +15,24 @@ import { AppContext } from "../Hooks/appContext";
     //     setregisterInput({ ...registerInput, [e.target.name]: e.target.value });
     // };
 
-    const { userProvider, registerHandler} = useContext(AppContext);
+    const { userState, setUser, registerHandler} = useContext(AppContext);
     
     const handelChange = (e) => {
-        userProvider.setUser({
-            ...userProvider.userState,
-            // isLoggedIn: true,
+        setUser({
+            ...userState,
             user: {
-                ...userProvider.userState.user,
+                ...userState.user,
                 [e.target.name]: e.target.value
             }
         });
     }
     const handelSubmit = (e) => {
         e.preventDefault();
-        registerHandler(userProvider.userState)
-        console.log(userProvider.userState);
-        console.log(userProvider.userState.isLoggedIn);
+        registerHandler(userState.user)
     }
 
 
-
+console.log(userState.error_list)
     return (
 
 <section className=" bg-image my-5"
@@ -52,26 +49,31 @@ import { AppContext } from "../Hooks/appContext";
 
                 <div className="form-outline mb-3">
                   <label className="form-label" htmlFor="form3Example1cg" style={{ color: "#cda45e" }}>Your Name</label>
-                  <input name="name" type="text" id="form3Example1cg" className="form-control form-control-lg" value={userProvider.userState.user.name}  onChange={handelChange}/>
+                  <input name="name" type="text" id="form3Example1cg" className="form-control form-control-lg" value={userState.user.name}  onChange={handelChange}/>
+                  <span className="text-danger">{userState.error_list.name}</span>
                 </div>
 
                 <div className="form-outline mb-3">
                   <label className="form-label" htmlFor="form3Example3cg" style={{ color: "#cda45e" }}>Your Email</label>
-                  <input name="email" type="email" id="form3Example3cg" className="form-control form-control-lg" value={userProvider.userState.user.email} onChange={handelChange}/>
+                  <input name="email" type="email" id="form3Example3cg" className="form-control form-control-lg" value={userState.user.email} onChange={handelChange}/>
+                  <span className="text-danger">{userState.error_list.email}</span>
                 </div>
                 <div className="form-outline mb-3">
                   <label className="form-label" htmlFor="form3Example5cg" style={{ color: "#cda45e" }}>Your Phone</label>
-                  <input name="phone" type="text" id="form3Example5cg" className="form-control form-control-lg" value={userProvider.userState.user.phone} onChange={handelChange}/>
+                  <input name="phone" type="text" id="form3Example5cg" className="form-control form-control-lg" value={userState.user.phone} onChange={handelChange}/>
+                  <span className="text-danger">{userState.error_list.phone}</span>
                 </div>
 
                 <div className="form-outline mb-3">
                   <label className="form-label" htmlFor="form3Example4cg" style={{ color: "#cda45e" }}>Password</label>
-                  <input name="password" type="password" id="form3Example4cg" className="form-control form-control-lg" value={userProvider.userState.user.password} onChange={handelChange}/>
+                  <input name="password" type="password" id="form3Example4cg" className="form-control form-control-lg" value={userState.user.password} onChange={handelChange}/>
+                  <span className="text-danger">{userState.error_list.password}</span>
                 </div>
 
                 <div className="form-outline mb-3">
                   <label className="form-label" htmlFor="form3Example4cdg" style={{ color: "#cda45e" }}>Repeat your password</label>
-                  <input name="confirmPassword" type="password" id="form3Example4cdg" className="form-control form-control-lg" value={userProvider.userState.user.confirmPassword} onChange={handelChange}/>
+                  <input name="password_confirmation" type="password" id="form3Example4cdg" className="form-control form-control-lg" value={userState.user.password_confirmation} onChange={handelChange}/>
+                  <span className="text-danger">{userState.error_list.password_confirmation}</span>
                 </div>
 
                 <div className="form-check d-flex justify-content-center mb-5">

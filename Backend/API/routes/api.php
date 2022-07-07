@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('users/search/{name}', [User_c::class, 'search']);
+// Route::post('/users', [User_c::class, 'store']);
+
 Route::group(['middleware' => [ 'auth:sanctum' ]], function () {
     Route::resource('users', User_c::class);
 });
