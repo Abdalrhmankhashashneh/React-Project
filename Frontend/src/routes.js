@@ -1,6 +1,6 @@
 // import your react model here and render it in the index.js file.
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 //import your pages here  (e.g. import Home from './pages/Home';)
 import Home from "./pages/Home";
@@ -19,34 +19,45 @@ import Footer from "./components/Footer";
 //import '../css/main.css';
 
 //import your hooks here (if you have any)
-import useAppContext, { AppContext } from "./Hooks/appContext";
+import { AppContext } from "./Hooks/appContext";
 
 export default function AppRoutes() {
 
     //create your global state here (e.g. const [state, setState] = useState({});)
-
-    const [state, setState] = useState({
+    const [userState, setUser] = useState({
         isLoggedIn: false,
         user: {
-            name: "abood",
-            email: "smsmspy@gmail.com",
+            name: "",
+            email: "",
             phone: "",
-            password: "123456",
-            confirmPassword: "123456"
+            password: "",
+            confirmPassword: ""
         }
 
     });
 
+    const userProvider = useMemo(()=>({userState, setUser}), [userState, setUser])
+
+    const registerHandler = async (user) => {
+        await fetch(`http://127.0.0.1:8000/api/users`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        });
+        setUser(userState);
+        
+      };
+
     useEffect(() => {
-        console.log(state);
+        // console.log(user);
     }
-        , []);
+        , [userState]);
     return (
         <Router> {/* <Router> is a component that wraps your entire app.*/}
 
             <Nav /> {/* <Nav> is a component that renders the nav bar.*/}
 
-            <AppContext.Provider value={{ state, setState }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
+            <AppContext.Provider value={{ userProvider, registerHandler }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
 
                 <Routes> {/* <Routes> is a component that renders your routes.*/}
 
