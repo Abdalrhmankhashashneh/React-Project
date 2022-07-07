@@ -40,7 +40,7 @@ export default function AppRoutes() {
 
     // const userProvider = useMemo(()=>({userState, setUser}), [userState, setUser])
 
-    
+
     // const http = axios.create({
     //     baseUrl: 'http://127.0.0.1:8000/',
     //     headers: {
@@ -48,18 +48,18 @@ export default function AppRoutes() {
     //     },
     //     withCredentials: true,
     // })
-    useEffect(()=>{},[userState])
-    
-    const registerHandler = (user) => {   
-         axios({ 
-            method:'post',
+    useEffect(() => { }, [userState])
+
+    const registerHandler = (user) => {
+        axios({
+            method: 'post',
             url: 'http://127.0.0.1:8000/api/users',
             // headers: {Authorization: 'Bearer ' + 'token'},
-            headers: {Accept: 'application/json'},
+            headers: { Accept: 'application/json' },
             data: user
         }).then((res) => {
             if (res.data.status === 200) {
-                
+
                 console.log(res.data.user)
                 console.log(userState.error_list)
                 console.log(userState.user)
@@ -70,8 +70,9 @@ export default function AppRoutes() {
                     title: `${res.data.message}`,
                     showConfirmButton: false,
                     timer: 1500
-                  })
-                  setUser( {isLoggedIn: true ,
+                })
+                setUser({
+                    isLoggedIn: true,
                     user: {
                         name: "",
                         email: "",
@@ -80,16 +81,16 @@ export default function AppRoutes() {
                         password_confirmation: "",
                     },
                     error_list: []
-            
+
                 })
-            }else{
+            } else {
                 console.log(res)
                 console.log(userState.error_list)
                 console.log(userState.user)
-                setUser({ ...userState ,error_list: res.data.validation_errors })
+                setUser({ ...userState, error_list: res.data.validation_errors })
             }
         }).catch((err) => console.log(err))
-       
+
         // const res = await fetch('http://127.0.0.1:8000/api/users', {
         //   method: "POST",
         //   headers: { 'Accept': 'application/json',
@@ -97,14 +98,14 @@ export default function AppRoutes() {
         //   body: JSON.stringify(user),
         // });
         // if (res.status === 200) {
-                
+
         //         }else{
         //             console.log(res)
         //             setUser({ ...userState ,error_list: res.validation_errors })
-                    
+
         //         }
         // console.log(await res.json())
-        
+
     };
 
     // console.log(JSON.parse(localStorage.getItem('user')))
@@ -114,7 +115,7 @@ export default function AppRoutes() {
 
             <Nav /> {/* <Nav> is a component that renders the nav bar.*/}
 
-            <AppContext.Provider value={{ userState,setUser, registerHandler }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
+            <AppContext.Provider value={{ userState, setUser, registerHandler }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
 
                 <Routes> {/* <Routes> is a component that renders your routes.*/}
 
