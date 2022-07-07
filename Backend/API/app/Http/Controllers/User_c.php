@@ -8,6 +8,28 @@ use Illuminate\Support\Facades\Validator;
 
 class User_c extends Controller
 {
+     public function Login(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+        $user = User::where('email', $request->email)->first();
+        if ($user) {
+            if (Hash::check($request->password, $user->password)) {
+                $logged_user = [ "id" => $user->id ,'name' =>$user->name , 'email' => $user->email ,'phone'=> $user->phone ];
+                return response()->json($logged_user , 200);
+            } else {
+                return response()->json(['error'=>'Check email and password '], 401);
+            }
+        } else {
+            return response()->json(['error'=>'email dose not exist'], 401);
+        }
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -64,7 +86,7 @@ class User_c extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($wmail )
     {
         $user = User::find($id);
         if( $user ){

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\floor_type;
 use Illuminate\Http\Request;
 
 class floor_type_c extends Controller
@@ -13,7 +13,9 @@ class floor_type_c extends Controller
      */
     public function index()
     {
-        //
+        $floor_types = floor_type::all();
+        return response()->json($floor_types);
+
     }
 
     /**
