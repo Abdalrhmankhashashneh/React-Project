@@ -9,27 +9,9 @@ function Home() {
   return (
     <>
 
-
-      <div id="topbar" className="d-flex align-items-center fixed-top">
-        <div className="container d-flex justify-content-center justify-content-md-between">
-
-          <div className="contact-info d-flex align-items-center">
-            <i className="bi bi-phone d-flex align-items-center"><span>sdfgbn</span></i>
-            <i className="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 11AM - 23PM</span></i>
-          </div>
-
-          <div className="languages d-none d-md-flex align-items-center">
-            <ul>
-              <li>En</li>
-              <li><a href="#">De</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+ 
 
 
-
-    
       <section id="hero" className="d-flex align-items-center">
         <div className="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
           <div className="row">
@@ -39,7 +21,7 @@ function Home() {
 
               <div className="btns">
                 <a href="#menu" className="btn-menu animated fadeInUp scrollto">Our Menu</a>
-                <a href="#book-a-table" className="btn-book animated fadeInUp scrollto">Book a Table</a>
+                <a href="/floor" className="btn-book animated fadeInUp scrollto">Book a Table</a>
               </div>
             </div>
             <div className="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
@@ -53,14 +35,44 @@ function Home() {
       <main id="main">
 
 
-        
+        {/* <section id="about" className="about">
+          <div className="container" data-aos="fade-up">
+
+            <div className="row">
+              <div className="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                <div className="about-img">
+                  <img src="assets/img/about.jpg" alt="" />
+                </div>
+              </div>
+              <div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                <p className="fst-italic">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                  magna aliqua.
+                </p>
+                <ul>
+                  <li><i className="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                  <li><i className="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                  <li><i className="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                </ul>
+                <p>
+                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                  culpa qui officia deserunt mollit anim id est laborum
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section> */}
+
 
         <section id="why-us" className="why-us">
           <div className="container" data-aos="fade-up">
 
             <div className="section-title">
-              <h2>Why Us</h2>
-              <p>Why Choose Our Restaurant</p>
+              <h2>Floors</h2>
+              <p>Check Out Floors</p>
             </div>
 
             <div className="row">
@@ -71,6 +83,8 @@ function Home() {
                   <span>VIP</span>
                   <h4>Lorem Ipsum</h4>
                   <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+                  
+                  
                 </div>
                 </Link>
               </div>
@@ -98,124 +112,10 @@ function Home() {
             </div>
 
           </div>
-        </section> 
-
-
-        <section id="menu" className="menu section-bg">
-          <div className="container" data-aos="fade-up">
-
-            <div className="section-title">
-              <h2>Menu</h2>
-              <p>Check Our Tasty Menu</p>
-            </div>
-
-            <div className="row" data-aos="fade-up" data-aos-delay="100">
-              <div className="col-lg-12 d-flex justify-content-center">
-                <ul id="menu-flters">
-                  <li data-filter="*" className="filter-active">All</li>
-                  <li data-filter=".filter-starters">Starters</li>
-                  <li data-filter=".filter-salads">Salads</li>
-                  <li data-filter=".filter-specialty">Specialty</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="row menu-container" data-aos="fade-up" data-aos-delay="200">
-
-              <div className="col-lg-6 menu-item filter-starters">
-                <img src="assets/img/menu/lobster-bisque.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Lobster Bisque</a><span>$5.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-specialty">
-                <img src="assets/img/menu/bread-barrel.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Bread Barrel</a><span>$6.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-starters">
-                <img src="assets/img/menu/cake.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Crab Cake</a><span>$7.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  A delicate crab cake served on a toasted roll with lettuce and tartar sauce
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-salads">
-                <img src="assets/img/menu/caesar.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Caesar Selections</a><span>$8.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-specialty">
-                <img src="assets/img/menu/tuscan-grilled.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Tuscan Grilled</a><span>$9.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Grilled chicken with provolone, artichoke hearts, and roasted red pesto
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-starters">
-                <img src="assets/img/menu/mozzarella.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Mozzarella Stick</a><span>$4.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-salads">
-                <img src="assets/img/menu/greek-salad.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Greek Salad</a><span>$9.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Fresh spinach, crisp romaine, tomatoes, and Greek olives
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-salads">
-                <img src="assets/img/menu/spinach-salad.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Spinach Salad</a><span>$9.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
-                </div>
-              </div>
-
-              <div className="col-lg-6 menu-item filter-specialty">
-                <img src="assets/img/menu/lobster-roll.jpg" className="menu-img" alt="" />
-                <div className="menu-content">
-                  <a href="#">Lobster Roll</a><span>$12.95</span>
-                </div>
-                <div className="menu-ingredients">
-                  Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
-                </div>
-              </div>
-
-            </div>
-
-          </div>
         </section>
+
+
+        
 
 
         <section id="specials" className="specials">
@@ -230,19 +130,19 @@ function Home() {
               <div className="col-lg-3">
                 <ul className="nav nav-tabs flex-column">
                   <li className="nav-item">
-                    <a className="nav-link active show" data-bs-toggle="tab" href="#tab-1">Modi sit est</a>
+                    <a className="nav-link active show" data-bs-toggle="tab" href="#tab-1">Lobster Newburg</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="tab" href="#tab-2">Unde praesentium sed</a>
+                    <a className="nav-link" data-bs-toggle="tab" href="#tab-2">Waldorf Salad</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
+                    <a className="nav-link" data-bs-toggle="tab" href="#tab-3">Bucatini all'amatriciana</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
+                    <a className="nav-link" data-bs-toggle="tab" href="#tab-4">soul food</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
+                    <a className="nav-link" data-bs-toggle="tab" href="#tab-5">Cobb Salad</a>
                   </li>
                 </ul>
               </div>
@@ -251,9 +151,9 @@ function Home() {
                   <div className="tab-pane active show" id="tab-1">
                     <div className="row">
                       <div className="col-lg-8 details order-2 order-lg-1">
-                        <h3>Architecto ut aperiam autem id</h3>
-                        <p className="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                        <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                        <h3> The Lobster Newburg</h3>
+                        <p className="fst-italic">Ben Wenberg, a successful sea captain in the West Indes fruit trade, is rumored to be responsible for this creamy, decadent seafood dish. </p>
+                        <p> In 1876, Wenberg shared his recipe with Charles Delmonico of Delmonico's restaurant , and it subsequently appeared on the menu as "Lobster a la Wenburg."</p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-1.png" alt="" className="img-fluid" />
@@ -263,9 +163,9 @@ function Home() {
                   <div className="tab-pane" id="tab-2">
                     <div className="row">
                       <div className="col-lg-8 details order-2 order-lg-1">
-                        <h3>Et blanditiis nemo veritatis excepturi</h3>
-                        <p className="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                        <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                        <h3>The Waldorf salad</h3>
+                        <p className="fst-italic">which features apples, celery, grapes, and chopped walnuts over a bed of greens, is named after the establishment that birthed it: the Waldorf-Astoria Hotel in New York City</p>
+                        <p>According to The New York Times, the dish was dreamed up by maitre-d'hotel Oscar Tschirky. When the hotel served it at a charity ball for Saint Mary's Hospital for Children in 1893, it was met with rave reviews. Today, it's still served at the Waldorf and on menus all over the country.</p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-2.png" alt="" className="img-fluid" />
@@ -275,9 +175,9 @@ function Home() {
                   <div className="tab-pane" id="tab-3">
                     <div className="row">
                       <div className="col-lg-8 details order-2 order-lg-1">
-                        <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                        <p className="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                        <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                        <h3> The Bucatini all'amatriciana</h3>
+                        <p className="fst-italic">	Traditional Amatrice dish, made with bucatini pasta, with tomatoes, guanciale, Pecorino Romano cheese and black pepper.</p>
+                        <p>A baked pasta dish, made with cannelloni (a cylindrical type of pasta) filled with a sauce of ricotta cheese and spinach and covered by a tomato sauce</p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-3.png" alt="" className="img-fluid" />
@@ -287,9 +187,9 @@ function Home() {
                   <div className="tab-pane" id="tab-4">
                     <div className="row">
                       <div className="col-lg-8 details order-2 order-lg-1">
-                        <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                        <p className="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                        <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                        <h3> The soul food</h3>
+                        <p className="fst-italic"> the foods and techniques associated with the African American cuisine of the United States.</p>
+                        <p>The term was first used in print in 1964 during the rise of “Black pride,” when many aspects of African American culture—including soul music—were celebrated for their contribution to the American way of life. The term celebrated the ingenuity and skill of cooks who were able to form a distinctive cuisine despite limited means.</p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-4.png" alt="" className="img-fluid" />
@@ -299,9 +199,11 @@ function Home() {
                   <div className="tab-pane" id="tab-5">
                     <div className="row">
                       <div className="col-lg-8 details order-2 order-lg-1">
-                        <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                        <p className="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                        <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                        <h3> The Cobb Salad</h3>
+                        <p className="fst-italic">Cobb shared the dish with his friend, Sid Grauman of the even-more legendary Grauman's Chinese Theatre, and the next day, Grauman came back asking for a "Cobb Salad."</p>
+                        <p>In 1937, the everything-but-the-kitchen-sink dish was officially added to the restaurant's menu, and stars like Spencer Tracy, Clark Gable, and Lucille Ball were gobbling it up.
+
+</p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-5.png" alt="" className="img-fluid" />
@@ -315,7 +217,7 @@ function Home() {
           </div>
         </section>
 
-        <section id="events" className="events">
+        {/* <section id="events" className="events">
           <div className="container" data-aos="fade-up">
 
             <div className="section-title">
@@ -411,11 +313,130 @@ function Home() {
             </div>
 
           </div>
+        </section> */}
+
+
+
+
+        <section id="menu" className="menu section-bg">
+          <div className="container" data-aos="fade-up">
+
+            <div className="section-title">
+              <h2>Menu</h2>
+              <p>Check Our Tasty Menu</p>
+            </div>
+
+            <div className="row" data-aos="fade-up" data-aos-delay="100">
+              <div className="col-lg-12 d-flex justify-content-center">
+                {/* <ul id="menu-flters">
+                  <li data-filter="*" className="filter-active">All</li>
+                  <li data-filter=".filter-starters">Starters</li>
+                  <li data-filter=".filter-salads">Salads</li>
+                  <li data-filter=".filter-specialty">Specialty</li>
+                </ul> */}
+              </div>
+            </div>
+
+            <div className="row menu-container" data-aos="fade-up" data-aos-delay="200">
+
+              <div className="col-lg-6 menu-item filter-starters">
+                <img src="assets/img/menu/lobster-bisque.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Lobster Bisque</a><span>$5.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  tomato pasta, salt, heavy cream, Lobster
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-specialty">
+                <img src="assets/img/menu/bread-barrel.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Bread Barrel</a><span>$6.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Batter, egg, suger, milk, vanilla
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-starters">
+                <img src="assets/img/menu/cake.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Crab Cake</a><span>$7.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  A delicate crab cake served on a toasted roll with lettuce and tartar sauce
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-salads">
+                <img src="assets/img/menu/caesar.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Caesar Selections</a><span>$8.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  chicken, cheese, caeser soya, parmissan
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-specialty">
+                <img src="assets/img/menu/tuscan-grilled.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Tuscan Grilled</a><span>$9.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Grilled chicken with provolone, artichoke hearts, and roasted red pesto
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-starters">
+                <img src="assets/img/menu/mozzarella.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Mozzarella Stick</a><span>$4.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  cheese, mozzarella, garlic salt , seasoned bread crumbs
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-salads">
+                <img src="assets/img/menu/greek-salad.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Greek Salad</a><span>$9.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Fresh spinach, crisp romaine, tomatoes, and Greek olives
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-salads">
+                <img src="assets/img/menu/spinach-salad.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Spinach Salad</a><span>$9.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
+                </div>
+              </div>
+
+              <div className="col-lg-6 menu-item filter-specialty">
+                <img src="assets/img/menu/lobster-roll.jpg" className="menu-img" alt="" />
+                <div className="menu-content">
+                  <a href="#">Lobster Roll</a><span>$12.95</span>
+                </div>
+                <div className="menu-ingredients">
+                  Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
+                </div>
+              </div>
+
+            </div>
+
+          </div>
         </section>
 
 
 
-        <section id="book-a-table" className="book-a-table">
+         {/* <section id="book-a-table" className="book-a-table">
           <div className="container" data-aos="fade-up">
 
             <div className="section-title">
@@ -460,10 +481,10 @@ function Home() {
                 <div className="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
               </div>
               <div className="text-center"><button type="submit">Book a Table</button></div>
-            </form>
+            </form> 
 
           </div>
-        </section>
+        </section> */}
         <section id="testimonials" className="testimonials section-bg">
           <div className="container" data-aos="fade-up">
 
@@ -547,7 +568,7 @@ function Home() {
 
 
 
-        <section id="gallery" className="gallery">
+        {/* <section id="gallery" className="gallery">
 
           <div className="container" data-aos="fade-up">
             <div className="section-title">
@@ -627,9 +648,9 @@ function Home() {
             </div>
 
           </div>
-        </section>
+        </section> */}
 
-
+{/* 
         <section id="chefs" className="chefs">
           <div className="container" data-aos="fade-up">
 
@@ -697,12 +718,90 @@ function Home() {
             </div>
 
           </div>
-        </section>
-       
+        </section> */}
+        {/* <section id="contact" className="contact">
+          <div className="container" data-aos="fade-up">
+
+            <div className="section-title">
+              <h2>Contact</h2>
+              <p>Contact Us</p>
+            </div>
+          </div>
+
+
+
+          <div className="container" data-aos="fade-up">
+
+            <div className="row mt-5">
+
+              <div className="col-lg-4">
+                <div className="info">
+                  <div className="address">
+                    <i className="bi bi-geo-alt"></i>
+                    <h4>Location:</h4>
+                    <p>A108 Adam Street, New York, NY 535022</p>
+                  </div>
+
+                  <div className="open-hours">
+                    <i className="bi bi-clock"></i>
+                    <h4>Open Hours:</h4>
+                    <p>
+                      Monday-Saturday:<br />
+                      11:00 AM - 2300 PM
+                    </p>
+                  </div>
+
+                  <div className="email">
+                    <i className="bi bi-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>info@example.com</p>
+                  </div>
+
+                  <div className="phone">
+                    <i className="bi bi-phone"></i>
+                    <h4>Call:</h4>
+                    <p>+1 5589 55488 55s</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div className="col-lg-8 mt-5 mt-lg-0">
+
+                <form action="forms/contact.php" method="post" role="form" className="php-email-form">
+                  <div className="row">
+                    <div className="col-md-6 form-group">
+                      <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" required />
+                    </div>
+                    <div className="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" required />
+                    </div>
+                  </div>
+                  <div className="form-group mt-3">
+                    <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" required />
+                  </div>
+                  <div className="form-group mt-3">
+                    <textarea className="form-control" name="message" rows="8" placeholder="Message" required />
+                  </div>
+                  <div className="my-3">
+                    <div className="loading">Loading</div>
+                    <div className="error-message"></div>
+                    <div className="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+                  <div className="text-center"><button type="submit">Send Message</button></div>
+                </form>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section> */}
 
       </main>
 
-      <footer id="footer">
+      {/* <footer id="footer">
         <div className="footer-top">
           <div className="container">
             <div className="row">
@@ -769,7 +868,7 @@ function Home() {
 
           </div>
         </div>
-      </footer>
+      </footer> */}
       {/* <div id="preloader"></div>
       <a href="#" className="back-to-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a> */}
 
