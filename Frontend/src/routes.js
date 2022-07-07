@@ -11,10 +11,13 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Floor from "./pages/Floor";
+import Book from "./pages/Book";
+
 
 //import your components here (if you have any)
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+
 
 //import your css here (if you have any)
 //import '../css/main.css';
@@ -125,7 +128,9 @@ export default function AppRoutes() {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
-                    <Route path="/floor" element={<Floor />} />
+                    <Route path="/floor" element={<Floor/>} />
+                    <Route path="/book" element={<Book />} />
+                  
                 </Routes>
 
             </AppContext.Provider>
