@@ -13,7 +13,7 @@ class floor_type_c extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
