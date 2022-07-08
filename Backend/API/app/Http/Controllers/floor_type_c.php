@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\floor_type;
 use App\Models\Tables;
+use App\Models\reservation;
 use Illuminate\Http\Request;
+
 
 class floor_type_c extends Controller
 {
@@ -27,7 +29,12 @@ class floor_type_c extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'date' => 'required|date|unique',
+            'time' => 'required|time|unique',
+        ]);
+       $res =  reservation::create($validatedData);
+        return response()->json($res , 201);
     }
 
     /**
