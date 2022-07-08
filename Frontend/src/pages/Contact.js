@@ -1,5 +1,7 @@
 import { useState,useEffect } from "react";
-// import emailjs from 'emailjs-com'
+import axios from "axios";
+import Swal from "sweetalert2";
+
 
 
 
@@ -15,31 +17,34 @@ export default function Contact() {
   const [ name , setName] = useState('');
   const [ email , setEmail] = useState('');
   const [message , setMessage] = useState('');
-  const [emailSent, setEmailSent] = useState(false);
- const [err , setErr]=useState(false);
+
  const [isValid, setIsValid] = useState(false);
  const [msg , setMsg]=useState('');
+ const [responce , setResponce] = useState({}); 
+ const [valid, setValid] = useState(false);
+ const [masg , setMasg]=useState('');
+
  
-  
 
 
 
   const handleNamechange=(e)=>{
-    setName(e.target.value);
-    let item= e.target.value ;
-    if (item.length<5){
-     setErr(true)
+  const nameValid =/^[a-z]+$/ ;
+   setName(e.target.value);
+
+    if (nameValid.test(name)) {
+      setValid(true);
+      setMasg('Your name looks good!');
+    } else {
+      setValid(false);
+      setMasg('Please enter a valid name!');
     }
-    else{
-      setErr(false)
-    }
-   
   }
 
 
 
   const handleEmailchange=(e)=>{
-  const emailRegex = /\S+@\S+\.\S+/;
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     setEmail(e.target.value);
 
     if (emailRegex.test(email)) {
@@ -57,25 +62,37 @@ export default function Contact() {
   }
 
 
-  const handleSubmit=(e)=>{
-    e.preventDefault();
-    if (name && email && message){
-console.log(name , email , message);
-// let item = e.target.value;
-// if (item.length<4){
-//   alert('something wrong')
-//  }
-//  else{
-//    alert('true')
-//  }
+const handleSubmit=(e)=>{
+e.preventDefault();
+if (name && email && message){
 
-alert('your message has been sent');
-     
+console.log(name , email , message);
+Swal.fire({
+  position: 'top-center',
+  icon: 'success',
+  title: 'your message has been sent ',
+  showConfirmButton: false,
+  timer: 1500
+})
+
+const contact = {
+  name:name , email: email , message:message
+}
+
+axios({
+  method: 'post',
+  url: 'http://127.0.0.1:8000/api/contact',
+  headers: { Accept: 'application/json' },
+  data: contact
+}).then((res)=>{
+  setResponce(res)
+  console.log(res)
+})
 
       setName('');
       setEmail('');
       setMessage('');
-      setEmailSent(true);
+   
     }
 
   
@@ -142,14 +159,17 @@ alert('your message has been sent');
                     
                     <div className="col-md-6 form-group">
                       <input type="text" name="name" className="form-control" value={name}  onChange={handleNamechange} placeholder="Your Name"  />
-                    {err?<span style={{color:'white'}}>Your name must be at least 5 charachters</span>:null}
+                   
+                    <div className={`masg ${valid ? 'success' : 'error'}`}>
+                      {valid?'':masg}
+                     </div>
                      
                     </div>
                     
                     <div className="col-md-6 form-group mt-3 mt-md-0">
-                      <input type="email" className="form-control" name="email" value={email} onChange={handleEmailchange} placeholder="Your Email"  />
+                      <input type="email" className="form-control" name="email" value={email} onChange={handleEmailchange} placeholder="Your Email" />
                       <div className={`msg ${isValid ? 'success' : 'error'}`}>
-                      {msg}
+                      {isValid?'':msg}
                      </div>
                     </div>
                   </div>
@@ -159,12 +179,15 @@ alert('your message has been sent');
                   <div className="form-group mt-3">
                     <textarea className="form-control" name="message" rows="8" value={message}  onChange={handleMessagechange} placeholder="Message" />
                   </div>
-                  <div className="my-3">
+                  <div className="my-3 active">
                     <div className="loading">Loading</div>
                     <div className="error-message"></div>
                     <div className="sent-message">Your message has been sent. Thank you!</div>
                   </div>
-                  <div className="text-center"><button type="submit" onClick={handleSubmit}>Send Message</button></div>
+                  {
+                    (isValid && valid)? <div className="text-center"><button type="submit" onClick={handleSubmit}>Send Message</button></div>:''
+                  }
+                 
                   {/* <span className={emailSent ? 'visible' : null}>Thank you for your message, we will be in touch in no time!</span> */}
                 </form>
                 
