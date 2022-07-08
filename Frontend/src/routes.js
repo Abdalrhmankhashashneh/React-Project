@@ -54,7 +54,7 @@ export default function AppRoutes() {
     // })
     // useEffect(() => { }, [userState])
 
-    const registerHandler = (user) => {
+    const registerHandler = (user,navigate) => {
         axios({
             method: 'post',
             url: 'http://127.0.0.1:8000/api/users',
@@ -87,7 +87,7 @@ export default function AppRoutes() {
 
                 })
                 
-
+                navigate('/login')
 
             } else {
                 setUser({ ...userState, error_list: res.data.validation_errors })

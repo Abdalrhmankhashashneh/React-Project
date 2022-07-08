@@ -38,8 +38,7 @@ import { AppContext } from "../Hooks/appContext";
     }
     const handelSubmit = (e) => {
         e.preventDefault();
-        registerHandler(userState.user)
-        navigate('/login')
+        registerHandler(userState.user,navigate)
     }
 
 
