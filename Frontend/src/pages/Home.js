@@ -1,9 +1,18 @@
-import { useContext } from 'react';
+import { useContext,useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { AppContext } from '../Hooks/appContext';
 
 function Home() {
-  
+
+  useEffect(()=>{
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+},[])
+
+
   const { state } = useContext(AppContext);
   console.log(state);
   return (

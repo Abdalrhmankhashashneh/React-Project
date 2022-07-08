@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import '../css/main.css';
+import { useContext } from "react";
+import { AppContext } from "../Hooks/appContext";
 export default function Nav() {
+    const { userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user,setLoggin_user, loginHandler } = useContext(AppContext);
+
     return (
         <header id="header" className="fixed-top d-flex align-items-cente">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
@@ -11,10 +15,17 @@ export default function Nav() {
                     <ul>
                         <li><NavLink className="nav-link scrollto active" to="/">Home</NavLink></li>
                         <li><NavLink className="nav-link scrollto" to="/about">About</NavLink></li>
+                        <li><NavLink className="navlink- scrollto" to="/contact">Contact</NavLink></li>
+                        <li><NavLink className="nav-link scrollto" to="/floor">floor</NavLink></li>
+                        
+                        {!localStorage.getItem('logged_user') ? 
+                        <>
                         <li><NavLink className="nav-link scrollto" to="/login">Login</NavLink></li>
                         <li><NavLink className="nav-link scrollto" to="/register">Register</NavLink></li>
-                        <li><NavLink className="nav-link scrollto" to="/contact">Contact</NavLink></li>
-                        <li><NavLink className="nav-link scrollto" to="/floor">floor</NavLink></li>
+                        </>
+                        :
+                        <li><button className="nav-link scrollto logout" onClick={logoutHandler}>Logout</button></li>
+                        }
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle"></i>
                 </nav>

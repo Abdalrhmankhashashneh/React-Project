@@ -1,38 +1,48 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../Hooks/appContext";
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 export default function Login() {
-    const { userState, setUser, registerHandler } = useContext(AppContext);
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+  
+  useEffect(()=>{
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+},[])
+
+
+    const { userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user,setLoggin_user, loginHandler  } = useContext(AppContext);
+    // const [username, setUsername] = useState("");
+    // const [password, setPassword] = useState("");
+
+    // const handelChange = (e) => {
+    //     if (e.target.name === "username") {
+    //         setUsername(e.target.value);
+    //     }
+    //     else {
+    //         setPassword(e.target.value);
+    //     }
+    // }
+
+    const navigate = useNavigate();
+
+    const [loginInput, setLoginInput] = useState({
+      email: "",
+      password: "",
+    })
 
     const handelChange = (e) => {
-        if (e.target.name === "username") {
-            setUsername(e.target.value);
-        }
-        else {
-            setPassword(e.target.value);
-        }
+      setLoginInput({...loginInput, [e.target.name]: e.target.value})
     }
     const handelSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password);
-        if (username === userState.user.email && password === userState.user.password) {
-            setUser({
-                ...userState.user,
-                // isLoggedIn: true
-            });
-            alert("You are logged in");
-        }
-        else {
-            setUser({
-                ...userState.user,
-                // isLoggedIn: false,
-            });
-            alert("You are not logged in");
-        }
+        loginHandler(loginInput, navigate);
     }
+    // useEffect(() => {},[logged_user])
     return (
         <section className=" bg-image my-5"
         style={{ backgroundImage: "url('assets/img/about.jpg')" }}>
@@ -47,15 +57,17 @@ export default function Login() {
                     <form onSubmit={handelSubmit}>
                       <div className="form-outline mb-3">
                         <label className="form-label " htmlFor="form3Example3cg" style={{ color: "#cda45e" }}>Your Email</label>
-                        <input name="email" type="email" id="form3Example3cg" className="form-control form-control-lg" value={userState.user.email} onChange={handelChange}/>
+                        <input name="email" type="email" id="form3Example3cg" className="form-control form-control-lg" value={loginInput.email} onChange={handelChange}/>
+                        <span className="text-danger">{loggin_user.error_list.email ? loggin_user.error_list.email: loggin_user.error_credential}</span>
                       </div>
                       <div className="form-outline mb-3">
                         <label className="form-label " htmlFor="form3Example4cg" style={{ color: "#cda45e" }}>Password</label>
-                        <input name="password" type="password" id="form3Example4cg" className="form-control form-control-lg" value={userState.user.password} onChange={handelChange}/>
+                        <input name="password" type="password" id="form3Example4cg" className="form-control form-control-lg" value={loginInput.password} onChange={handelChange}/>
+                        <span className="text-danger">{loggin_user.error_list.password && loggin_user.error_list.password}</span>
                       </div>
       
                       <div className="d-flex justify-content-center">
-                        <button type="button"
+                        <button type="submit"
                           className="login-a-table-btn fw-bold">Login</button>
                       </div>
       
