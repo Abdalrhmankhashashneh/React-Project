@@ -38,8 +38,12 @@ class floor_type_c extends Controller
      */
     public function show($id)
     {
-        $tabels = Tables::where('floor_type_id', $id)->get();
-        return response()->json($tabels);
+        $tables = Tables::where('floor_type_id', $id)->get();
+        if($tables->count() > 0){
+
+            return response()->json($tables);
+        }
+         return response()->json(['message' => 'No tables found'], 404);
        }
 
     /**
