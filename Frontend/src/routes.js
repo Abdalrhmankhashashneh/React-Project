@@ -128,7 +128,7 @@ export default function AppRoutes() {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
-                    <Route path="/floor" element={<Floor/>} />
+                    <Route path="/floor/:id" element={<Floor/>} />
                     <Route path="/book" element={<Book />} />
                   
                 </Routes>
