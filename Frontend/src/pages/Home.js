@@ -1,29 +1,11 @@
-<<<<<<< HEAD
 import { useContext, useEffect } from 'react';
 import {NavLink } from "react-router-dom";
-=======
-import { useContext,useEffect } from 'react';
-import { Link } from "react-router-dom";
->>>>>>> 8853402f48948e16153cd7f43600300df42db2ad
 import { AppContext } from '../Hooks/appContext';
 import {useState} from 'react' ;
 import axios from 'axios'
 
 function Home() {
-<<<<<<< HEAD
   const [floor , setFloor]=useState([]);
-=======
-
-  useEffect(()=>{
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      })
-},[])
-
-
->>>>>>> 8853402f48948e16153cd7f43600300df42db2ad
   const { state } = useContext(AppContext);
   console.log(state);
 
