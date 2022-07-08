@@ -28,7 +28,8 @@ function Home() {
           <div className="row">
             <div className="col-lg-8">
               <h1>Welcome to <span>Restaurantly</span></h1>
-              <h2>Delivering great food for more than 18 years!</h2>
+              <h2>You Don't Need an inspirational qoute , when you have good food ..</h2>
+              <h2>So Come and TRY .. !</h2>
 
               <div className="btns">
                 <a href="#menu" className="btn-menu animated fadeInUp scrollto">Our Menu</a>
@@ -37,7 +38,9 @@ function Home() {
             </div>
             <div className="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
               <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" className="glightbox play-btn"></a>
-            </div>
+            </div> 
+
+
 
           </div>
         </div>
@@ -93,16 +96,16 @@ function Home() {
         
             
                 
-              <div className="col-lg-4"> 
+              <div className="col-lg-4" > 
                <NavLink to ={`floor/${item.id}`}>
                    
-                <div className="box" data-aos="zoom-in" data-aos-delay="100">  
+                <div className="box" data-aos="zoom-in" data-aos-delay="100" style={{height:'300px'}}>  
               
                 
                 
 
-                  <span>{item.name}</span>
-                  <h4>Lorem Ipsum</h4>
+                  <span>{item.img}</span>
+                  <h4>{item.name}</h4>
                   <p>{item.description}</p>
                   
                 </div>  </NavLink>
