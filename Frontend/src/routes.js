@@ -28,7 +28,7 @@ import { AppContext } from "./Hooks/appContext";
 
 export default function AppRoutes() {
 
-   
+
     //create your global state here (e.g. const [state, setState] = useState({});)
     const [userState, setUser] = useState({
         user: {
@@ -54,7 +54,7 @@ export default function AppRoutes() {
     // })
     // useEffect(() => { }, [userState])
 
-    const registerHandler = (user,navigate) => {
+    const registerHandler = (user, navigate) => {
         axios({
             method: 'post',
             url: 'http://127.0.0.1:8000/api/users',
@@ -86,7 +86,7 @@ export default function AppRoutes() {
                     error_list: []
 
                 })
-                
+
                 navigate('/login')
 
             } else {
@@ -112,47 +112,47 @@ export default function AppRoutes() {
     };
 
     // console.log(JSON.parse(localStorage.getItem('user')))
-    const [loggin_user,setLoggin_user] = useState({
-        user:(JSON.parse(localStorage.getItem('logged_user'))),
+    const [loggin_user, setLoggin_user] = useState({
+        user: (JSON.parse(localStorage.getItem('logged_user'))),
         error_list: [],
-        error_credential:''
+        error_credential: ''
     })
     const loginHandler = (loginInput, navigate) => {
-        axios.post(`http://127.0.0.1:8000/api/users/login`,loginInput).then(res => {  
+        axios.post(`http://127.0.0.1:8000/api/users/login`, loginInput).then(res => {
             if (res.data.status === 200) {
-                setLoggin_user({...loggin_user, user:localStorage.setItem('logged_user', JSON.stringify(res.data.logged_user))});
+                setLoggin_user({ ...loggin_user, user: localStorage.setItem('logged_user', JSON.stringify(res.data.logged_user)) });
                 // console.log(loggin_user)
-              // console.log(JSON.parse(localStorage.getItem('user')))
-              // console.log(JSON.parse(localStorage.getItem('user')).id)
-              Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: `${res.data.message}`,
-                showConfirmButton: false,
-                timer: 1500
-            });
-            
-            navigate('/')
-  
-          }else if(res.data.status === 401){
-            setLoggin_user({ ...loggin_user, error_list: res.data.validation_errors })
-            // console.log(loginInput.error_list)
-          }else {
-            setLoggin_user({ ...loggin_user, error_credential: res.data.error })
-            // console.log(loginInput.error_list)
-            // console.log(loginInput.error_credential)
-            // setLoginInput({ ...loginInput, error_list: res.data.validation_errors })
-            // console.log(loginInput.error_list)
-          }
+                // console.log(JSON.parse(localStorage.getItem('user')))
+                // console.log(JSON.parse(localStorage.getItem('user')).id)
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${res.data.message}`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+                navigate('/')
+
+            } else if (res.data.status === 401) {
+                setLoggin_user({ ...loggin_user, error_list: res.data.validation_errors })
+                // console.log(loginInput.error_list)
+            } else {
+                setLoggin_user({ ...loggin_user, error_credential: res.data.error })
+                // console.log(loginInput.error_list)
+                // console.log(loginInput.error_credential)
+                // setLoginInput({ ...loginInput, error_list: res.data.validation_errors })
+                // console.log(loginInput.error_list)
+            }
         }).catch((err) => console.log(err))
-        
+
     }
 
-    const [logged_user,setLogged_user] = useState(true)
+    const [logged_user, setLogged_user] = useState(true)
     // console.log(logged_user)
-    const logoutHandler = (e)=> {
+    const logoutHandler = (e) => {
         setLogged_user(!logged_user)
-        setLoggin_user({...loggin_user, user:{}})
+        setLoggin_user({ ...loggin_user, user: {} })
         localStorage.removeItem('logged_user')
         if (!logged_user) {
             Swal.fire({
@@ -160,8 +160,8 @@ export default function AppRoutes() {
                 icon: 'success',
                 title: `Logged Out successfully`,
                 showConfirmButton: false,
-             timer: 1500
-         });
+                timer: 1500
+            });
         }
     }
     // useEffect(() => {},[logged_user])
@@ -173,8 +173,8 @@ export default function AppRoutes() {
         <Router> {/* <Router> is a component that wraps your entire app.*/}
 
 
-            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user,setLoggin_user, loginHandler }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
-            <Nav /> {/* <Nav> is a component that renders the nav bar.*/}
+            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
+                <Nav /> {/* <Nav> is a component that renders the nav bar.*/}
 
                 <Routes> {/* <Routes> is a component that renders your routes.*/}
 
@@ -183,15 +183,15 @@ export default function AppRoutes() {
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/profile" element={<Profile />} />
-                    <Route path="/login" element={ localStorage.getItem('logged_user') ? <Navigate to="/"/> : <Login />} />
-                    <Route path="/register" element={localStorage.getItem('logged_user') ? <Navigate to="/"/> : <Register />} />
-                    <Route path="/floor/:id" element={<Floor/>} />
-                    <Route path="/book" element={<Book />} />
-                    <Route path='*' element={<NotFound />}/>
-                  
+                    <Route path="/login" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Login />} />
+                    <Route path="/register" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Register />} />
+                    <Route path="/floor/:id" element={<Floor />} />
+                    <Route path="/book/:floor_type_id/:table_id" element={localStorage.getItem('logged_user') ? <Book /> : <Navigate to="/login" />} />
+                    <Route path='*' element={<NotFound />} />
+
                 </Routes>
 
-            <Footer />  {/* <Footer> is a component that renders the footer.*/}
+                <Footer />  {/* <Footer> is a component that renders the footer.*/}
             </AppContext.Provider>
 
 

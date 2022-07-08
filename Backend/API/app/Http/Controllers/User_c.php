@@ -110,7 +110,15 @@ class User_c extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
+        $validator = Validator::make($request->all(),[
+            'name' => 'required|regex:/^[a-z ]+$/i',
+            'email' => 'required|email|unique:users',
+            'phone' => 'required|unique:users|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+        ]);
+        if($validator->fails()){
+            return response()->json(['validation_errors' => $validator->errors()]);
+        }
         if( $user ){
             $user->update($request->all());
             return response()->json($user);
@@ -147,7 +155,8 @@ class User_c extends Controller
         $user = User::where('name' , 'like' , '%'.$name.'%')->get();
         if( $user ){
             return response()->json($user);
-        }else{
+        }
+        else{
             return response()->json(['message' => 'User not found'], 404);
         }
     }
