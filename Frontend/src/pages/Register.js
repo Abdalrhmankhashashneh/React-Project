@@ -1,8 +1,18 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext,useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../Hooks/appContext";
  const Register =()=> {
 
+  useEffect(()=>{
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+},[])
+
+
+  const navigate = useNavigate();
     // const [registerInput, setregisterInput] = useState({
     //         name: "",
     //         email: "",
@@ -15,7 +25,7 @@ import { AppContext } from "../Hooks/appContext";
     //     setregisterInput({ ...registerInput, [e.target.name]: e.target.value });
     // };
 
-    const { userState, setUser, registerHandler} = useContext(AppContext);
+    const { userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user,setLoggin_user, loginHandler} = useContext(AppContext);
     
     const handelChange = (e) => {
         setUser({
@@ -28,7 +38,7 @@ import { AppContext } from "../Hooks/appContext";
     }
     const handelSubmit = (e) => {
         e.preventDefault();
-        registerHandler(userState.user)
+        registerHandler(userState.user,navigate)
     }
 
 

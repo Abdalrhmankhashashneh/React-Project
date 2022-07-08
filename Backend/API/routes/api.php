@@ -18,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 // Route::post('users/register', [Auth_c::class ,'register']);
 Route::get('users/search/{name}', [User_c::class, 'search']);
 Route::get('floor_type', [floor_type_c::class, 'index']);
+Route::get('floor_type/{id}', [floor_type_c::class, 'show']);
 Route::post('/users', [User_c::class, 'store']);
-Route::post('/users/log', [User_c::class, 'Login']);
+Route::post('/users/login', [User_c::class, 'Login']);
 
 
 Route::group(['middleware' => [ 'auth:sanctum' ]], function () {
