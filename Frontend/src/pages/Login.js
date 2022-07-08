@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AppContext } from "../Hooks/appContext";
 
 export default function Login() {
-    const { userProvider, registerHandler } = useContext(AppContext);
+    const { userState, setUser, registerHandler } = useContext(AppContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -18,17 +18,17 @@ export default function Login() {
     const handelSubmit = (e) => {
         e.preventDefault();
         console.log(username, password);
-        if (username === userProvider.user.email && password === userProvider.user.password) {
-            userProvider.setUser({
-                ...userProvider.user,
-                isLoggedIn: true
+        if (username === userState.user.email && password === userState.user.password) {
+            setUser({
+                ...userState.user,
+                // isLoggedIn: true
             });
             alert("You are logged in");
         }
         else {
-            userProvider.setUser({
-                ...userProvider.user,
-                isLoggedIn: false,
+            setUser({
+                ...userState.user,
+                // isLoggedIn: false,
             });
             alert("You are not logged in");
         }
@@ -44,14 +44,14 @@ export default function Login() {
                   <div className="card-body p-5">
                     <h2 className="text-uppercase text-center mb-5" style={{ color: "#cda45e" }}>Login</h2>
       
-                    <form>
+                    <form onSubmit={handelSubmit}>
                       <div className="form-outline mb-3">
                         <label className="form-label " htmlFor="form3Example3cg" style={{ color: "#cda45e" }}>Your Email</label>
-                        <input name="email" type="email" id="form3Example3cg" className="form-control form-control-lg" value={userProvider.userState.user.email} onChange={handelChange}/>
+                        <input name="email" type="email" id="form3Example3cg" className="form-control form-control-lg" value={userState.user.email} onChange={handelChange}/>
                       </div>
                       <div className="form-outline mb-3">
                         <label className="form-label " htmlFor="form3Example4cg" style={{ color: "#cda45e" }}>Password</label>
-                        <input name="password" type="password" id="form3Example4cg" className="form-control form-control-lg" value={userProvider.userState.user.password} onChange={handelChange}/>
+                        <input name="password" type="password" id="form3Example4cg" className="form-control form-control-lg" value={userState.user.password} onChange={handelChange}/>
                       </div>
       
                       <div className="d-flex justify-content-center">

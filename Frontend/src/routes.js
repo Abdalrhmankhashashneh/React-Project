@@ -1,5 +1,5 @@
 // import your react model here and render it in the index.js file.
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect, useState, useMemo } from "react";
 import axios from 'axios';
 import Swal from 'sweetalert2'
@@ -23,10 +23,10 @@ import Footer from "./components/Footer";
 import { AppContext } from "./Hooks/appContext";
 
 export default function AppRoutes() {
-
+    const location = useNavigate();
     //create your global state here (e.g. const [state, setState] = useState({});)
     const [userState, setUser] = useState({
-        isLoggedIn: false,
+        // isLoggedIn: false,
         user: {
             name: "",
             email: "",
@@ -55,10 +55,7 @@ export default function AppRoutes() {
             method: 'post',
             url: 'http://127.0.0.1:8000/api/users',
             // headers: {Authorization: 'Bearer ' + 'token'},
-<<<<<<< HEAD
             headers: { Accept: 'application/json' },
-=======
->>>>>>> 1079d86e085252d2e6c3e603efcbbd1556895625
             data: user
         }).then((res) => {
             if (res.data.status === 200) {
@@ -66,21 +63,16 @@ export default function AppRoutes() {
                 console.log(res.data.user)
                 console.log(userState.error_list)
                 console.log(userState.user)
-                localStorage.setItem('user', JSON.stringify(res.data.user))
+                // localStorage.setItem('user', JSON.stringify(res.data.user))
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
                     title: `${res.data.message}`,
                     showConfirmButton: false,
                     timer: 1500
-<<<<<<< HEAD
                 })
                 setUser({
-                    isLoggedIn: true,
-=======
-                  })
-                  setUser( {isLoggedIn: false,
->>>>>>> 1079d86e085252d2e6c3e603efcbbd1556895625
+                    // isLoggedIn: true,
                     user: {
                         name: "",
                         email: "",
@@ -91,6 +83,9 @@ export default function AppRoutes() {
                     error_list: []
 
                 })
+                location('/')
+
+
             } else {
                 console.log(res)
                 console.log(userState.error_list)
