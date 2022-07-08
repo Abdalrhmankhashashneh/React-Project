@@ -1,6 +1,13 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export default function Book() {
+  useEffect(()=>{
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+},[])
 
   const [user, setUser] = useState('');
   const [userErr, setUserErr] = useState(false);

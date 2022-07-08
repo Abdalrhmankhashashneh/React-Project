@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 // import emailjs from 'emailjs-com'
 
 
 
 export default function Contact() {
+  useEffect(()=>{
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+},[])
+
   const [ name , setName] = useState('');
   const [ email , setEmail] = useState('');
   const [message , setMessage] = useState('');

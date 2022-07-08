@@ -1,13 +1,24 @@
-import { useContext } from 'react';
-import { Link } from "react-router-dom";
+import { useContext, useEffect } from 'react';
+import {NavLink } from "react-router-dom";
 import { AppContext } from '../Hooks/appContext';
+import {useState} from 'react' ;
+import axios from 'axios'
 
 function Home() {
-  
+  const [floor , setFloor]=useState([]);
   const { state } = useContext(AppContext);
   console.log(state);
+
+  useEffect(()=>{axios('http://127.0.0.1:8000/api/floor_type').then((res)=>{
+    setFloor(res.data);
+    console.log(res);
+   
+
+})
+},[])
+  
   return (
-    <>
+    <> 
 
  
 
@@ -74,40 +85,59 @@ function Home() {
               <h2>Floors</h2>
               <p>Check Out Floors</p>
             </div>
-
+ 
             <div className="row">
+          
+          
+             {floor.map((item)=>(
+        
+            
+                
+              <div className="col-lg-4"> 
+               <NavLink to ={`floor/${item.id}`}>
+                   
+                <div className="box" data-aos="zoom-in" data-aos-delay="100">  
               
-              <div className="col-lg-4">
-              <Link to={{pathname:`/floor/${2}`}} >
-                <div className="box" data-aos="zoom-in" data-aos-delay="100">
-                  <span>VIP</span>
+                
+                
+
+                  <span>{item.name}</span>
                   <h4>Lorem Ipsum</h4>
-                  <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+                  <p>{item.description}</p>
                   
+                </div>  </NavLink>
+                </div>  
+                   
+
                   
-                </div>
-                </Link>
-              </div>
+            ))}  
+          
+              
+            
+                   
+                
+            
 
-              <div className="col-lg-4 mt-4 mt-lg-0">
-              <Link to="/floor">
-                <div className="box" data-aos="zoom-in" data-aos-delay="200">
-                  <span>General</span>
-                  <h4>Repellat Nihil</h4>
-                  <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
-                </div>
-                </Link>
-              </div>
+{/* 
+              //  <div className="col-lg-4 mt-4 mt-lg-0">
+              // <Link to="/floor">
+              //   <div className="box" data-aos="zoom-in" data-aos-delay="200">
+              //     <span>General</span>
+              //     <h4>Repellat Nihil</h4>
+              //     <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+              //   </div>
+              //   </Link>
+              // </div>  */}
 
-              <div className="col-lg-4 mt-4 mt-lg-0">
-              <Link to="/floor">
-                <div className="box" data-aos="zoom-in" data-aos-delay="300">
-                  <span>Family</span>
-                  <h4> Ad ad velit qui</h4>
-                  <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
-                </div>
-                </Link>
-              </div>
+              {/* //  <div className="col-lg-4 mt-4 mt-lg-0">
+              // <Link to="/floor">
+              //   <div className="box" data-aos="zoom-in" data-aos-delay="300">
+              //     <span>Family</span>
+              //     <h4> Ad ad velit qui</h4>
+              //     <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+              //   </div>
+              //   </Link>
+              // </div>  */}
 
             </div>
 

@@ -1750,6 +1750,22 @@ section {
   color: #fff;
 }
 
+.logout{
+  border: 0;
+  padding: 12px 25px;
+  transition: 0.3s;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 0;
+  /* border-right: 2px solid #cda45e; */
+  /* font-weight: 600; */
+  font-size: 15px;
+}
+.logout:hover {
+  color: #cda45e;
+
+}
+
 
 .gradient-custom-3 {
   /* fallback for old browsers */

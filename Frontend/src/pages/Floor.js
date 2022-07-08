@@ -5,49 +5,7 @@
 // import Item from "./Items";
 
 
-// export default function Floor() {
 
-//     // const [Api, setApi] = useState(
-//     //     [
-//     //         {
-//     //             tableid: "01", people: 2, price: 40 ,category:"1"
-
-//     //         },
-//     //         {
-//     //             tableid: "02", people: 4, price: 50 ,category:"3"
-
-//     //         },
-//     //         {
-
-//     //             tableid: "03", people: 5, price: 60 ,category:"2"
-//     //         },
-//     //         {
-
-//     //             tableid: "04", people: 6, price: 70 ,category:"3"
-//     //         },
-//     //         {
-
-//     //             tableid: "05", people: 6, price: 70 ,category:"1"
-//     //         },
-//     //         {
-
-//     //             tableid: "06", people: 6, price: 70 ,category:"2"
-//     //         },
-//     //         {
-
-//     //             tableid: "07", people: 6, price: 70 ,category:"1"
-//     //         },
-//     //         {
-
-//     //             tableid: "08", people: 6, price: 70 ,category:"1"
-//     //         },
-//     //         {
-
-//     //             tableid: "09", people: 4, price: 60 ,category:"2"
-//     //         }
-
-
-//     //     ]);
 
 
 
@@ -129,7 +87,14 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function Floor() {
-
+  
+  useEffect(()=>{
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+},[])
   const { id } = useParams();
   const [floor, setFloor] = useState([]);
   const [category ,setCategory] =useState([]);
