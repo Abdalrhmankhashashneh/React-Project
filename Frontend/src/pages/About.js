@@ -12,20 +12,18 @@ export default function About() {
               </div>
             </div>
             <div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-              <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+              <h3>WELCOME TO THE Restaurantly</h3>
               <p className="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+              Our company offers excellent Private Dining Services . We customize your meal as per your tastes, preferences, dietary restrictions, including raw/ veg to non-veg meals. Our private dining manager helps to create an ideal environment for the memorable experience of you and your guests. To know more about it . and here some of our features for you :
               </p>
               <ul>
-                <li><i className="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i className="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i className="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                <li><i className="bi bi-check-circle"></i> Different floors to suit what you want and the services you prefer</li>
+                <li><i className="bi bi-check-circle"></i>
+A special view of our restaurant to give you a sense of comfort</li>
+                <li><i className="bi bi-check-circle"></i> In our restaurant you will find the best chefs from different countries and different cultures to guarantee you diversity and deliciousness in the items</li>
               </ul>
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
+              Your visit will be a reason for our happiness and your happiness too, and for this reason you are always welcome
               </p>
             </div>
           </div>

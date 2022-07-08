@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\floor_type;
+use App\Models\Tables;
 use Illuminate\Http\Request;
 
 class floor_type_c extends Controller
@@ -13,7 +14,9 @@ class floor_type_c extends Controller
      */
     public function index()
     {
-        //
+        $floor_types = floor_type::all();
+        return response()->json($floor_types);
+
     }
 
     /**
@@ -35,8 +38,9 @@ class floor_type_c extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $tabels = Tables::where('floor_type_id', $id)->get();
+        return response()->json($tabels);
+       }
 
     /**
      * Update the specified resource in storage.

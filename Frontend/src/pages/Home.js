@@ -1,8 +1,9 @@
 import { useContext } from 'react';
-
+import { Link } from "react-router-dom";
 import { AppContext } from '../Hooks/appContext';
 
 function Home() {
+  
   const { state } = useContext(AppContext);
   console.log(state);
   return (
@@ -20,7 +21,7 @@ function Home() {
 
               <div className="btns">
                 <a href="#menu" className="btn-menu animated fadeInUp scrollto">Our Menu</a>
-                <a href="#book-a-table" className="btn-book animated fadeInUp scrollto">Book a Table</a>
+                <a href="/floor" className="btn-book animated fadeInUp scrollto">Book a Table</a>
               </div>
             </div>
             <div className="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
@@ -70,34 +71,42 @@ function Home() {
           <div className="container" data-aos="fade-up">
 
             <div className="section-title">
-              <h2>Why Us</h2>
-              <p>Why Choose Our Restaurant</p>
+              <h2>Floors</h2>
+              <p>Check Out Floors</p>
             </div>
 
             <div className="row">
-
+              
               <div className="col-lg-4">
+              <Link to={{pathname:`/floor/${2}`}} >
                 <div className="box" data-aos="zoom-in" data-aos-delay="100">
-                  <span>01</span>
+                  <span>VIP</span>
                   <h4>Lorem Ipsum</h4>
                   <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+                  
+                  
                 </div>
+                </Link>
               </div>
 
               <div className="col-lg-4 mt-4 mt-lg-0">
+              <Link to="/floor">
                 <div className="box" data-aos="zoom-in" data-aos-delay="200">
-                  <span>02</span>
+                  <span>General</span>
                   <h4>Repellat Nihil</h4>
                   <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
                 </div>
+                </Link>
               </div>
 
               <div className="col-lg-4 mt-4 mt-lg-0">
+              <Link to="/floor">
                 <div className="box" data-aos="zoom-in" data-aos-delay="300">
-                  <span>03</span>
+                  <span>Family</span>
                   <h4> Ad ad velit qui</h4>
                   <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
                 </div>
+                </Link>
               </div>
 
             </div>
@@ -121,19 +130,19 @@ function Home() {
               <div className="col-lg-3">
                 <ul className="nav nav-tabs flex-column">
                   <li className="nav-item">
-                    <a className="nav-link active show" data-bs-toggle="tab" href="#tab-1">Modi sit est</a>
+                    <a className="nav-link active show" data-bs-toggle="tab" href="#tab-1">Lobster Newburg</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="tab" href="#tab-2">Unde praesentium sed</a>
+                    <a className="nav-link" data-bs-toggle="tab" href="#tab-2">Waldorf Salad</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
+                    <a className="nav-link" data-bs-toggle="tab" href="#tab-3">Bucatini all'amatriciana</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
+                    <a className="nav-link" data-bs-toggle="tab" href="#tab-4">soul food</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
+                    <a className="nav-link" data-bs-toggle="tab" href="#tab-5">Cobb Salad</a>
                   </li>
                 </ul>
               </div>
@@ -142,9 +151,9 @@ function Home() {
                   <div className="tab-pane active show" id="tab-1">
                     <div className="row">
                       <div className="col-lg-8 details order-2 order-lg-1">
-                        <h3>Architecto ut aperiam autem id</h3>
-                        <p className="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                        <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                        <h3> The Lobster Newburg</h3>
+                        <p className="fst-italic">Ben Wenberg, a successful sea captain in the West Indes fruit trade, is rumored to be responsible for this creamy, decadent seafood dish. </p>
+                        <p> In 1876, Wenberg shared his recipe with Charles Delmonico of Delmonico's restaurant , and it subsequently appeared on the menu as "Lobster a la Wenburg."</p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-1.png" alt="" className="img-fluid" />
@@ -154,9 +163,9 @@ function Home() {
                   <div className="tab-pane" id="tab-2">
                     <div className="row">
                       <div className="col-lg-8 details order-2 order-lg-1">
-                        <h3>Et blanditiis nemo veritatis excepturi</h3>
-                        <p className="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                        <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                        <h3>The Waldorf salad</h3>
+                        <p className="fst-italic">which features apples, celery, grapes, and chopped walnuts over a bed of greens, is named after the establishment that birthed it: the Waldorf-Astoria Hotel in New York City</p>
+                        <p>According to The New York Times, the dish was dreamed up by maitre-d'hotel Oscar Tschirky. When the hotel served it at a charity ball for Saint Mary's Hospital for Children in 1893, it was met with rave reviews. Today, it's still served at the Waldorf and on menus all over the country.</p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-2.png" alt="" className="img-fluid" />
@@ -166,9 +175,9 @@ function Home() {
                   <div className="tab-pane" id="tab-3">
                     <div className="row">
                       <div className="col-lg-8 details order-2 order-lg-1">
-                        <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                        <p className="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                        <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                        <h3> The Bucatini all'amatriciana</h3>
+                        <p className="fst-italic">	Traditional Amatrice dish, made with bucatini pasta, with tomatoes, guanciale, Pecorino Romano cheese and black pepper.</p>
+                        <p>A baked pasta dish, made with cannelloni (a cylindrical type of pasta) filled with a sauce of ricotta cheese and spinach and covered by a tomato sauce</p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-3.png" alt="" className="img-fluid" />
@@ -178,9 +187,9 @@ function Home() {
                   <div className="tab-pane" id="tab-4">
                     <div className="row">
                       <div className="col-lg-8 details order-2 order-lg-1">
-                        <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                        <p className="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                        <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                        <h3> The soul food</h3>
+                        <p className="fst-italic"> the foods and techniques associated with the African American cuisine of the United States.</p>
+                        <p>The term was first used in print in 1964 during the rise of “Black pride,” when many aspects of African American culture—including soul music—were celebrated for their contribution to the American way of life. The term celebrated the ingenuity and skill of cooks who were able to form a distinctive cuisine despite limited means.</p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-4.png" alt="" className="img-fluid" />
@@ -190,9 +199,11 @@ function Home() {
                   <div className="tab-pane" id="tab-5">
                     <div className="row">
                       <div className="col-lg-8 details order-2 order-lg-1">
-                        <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                        <p className="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                        <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                        <h3> The Cobb Salad</h3>
+                        <p className="fst-italic">Cobb shared the dish with his friend, Sid Grauman of the even-more legendary Grauman's Chinese Theatre, and the next day, Grauman came back asking for a "Cobb Salad."</p>
+                        <p>In 1937, the everything-but-the-kitchen-sink dish was officially added to the restaurant's menu, and stars like Spencer Tracy, Clark Gable, and Lucille Ball were gobbling it up.
+
+</p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-5.png" alt="" className="img-fluid" />
@@ -206,7 +217,7 @@ function Home() {
           </div>
         </section>
 
-        <section id="events" className="events">
+        {/* <section id="events" className="events">
           <div className="container" data-aos="fade-up">
 
             <div className="section-title">
@@ -302,7 +313,7 @@ function Home() {
             </div>
 
           </div>
-        </section>
+        </section> */}
 
 
 
@@ -317,12 +328,12 @@ function Home() {
 
             <div className="row" data-aos="fade-up" data-aos-delay="100">
               <div className="col-lg-12 d-flex justify-content-center">
-                <ul id="menu-flters">
+                {/* <ul id="menu-flters">
                   <li data-filter="*" className="filter-active">All</li>
                   <li data-filter=".filter-starters">Starters</li>
                   <li data-filter=".filter-salads">Salads</li>
                   <li data-filter=".filter-specialty">Specialty</li>
-                </ul>
+                </ul> */}
               </div>
             </div>
 
@@ -334,7 +345,7 @@ function Home() {
                   <a href="#">Lobster Bisque</a><span>$5.95</span>
                 </div>
                 <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
+                  tomato pasta, salt, heavy cream, Lobster
                 </div>
               </div>
 
@@ -344,7 +355,7 @@ function Home() {
                   <a href="#">Bread Barrel</a><span>$6.95</span>
                 </div>
                 <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
+                  Batter, egg, suger, milk, vanilla
                 </div>
               </div>
 
@@ -364,7 +375,7 @@ function Home() {
                   <a href="#">Caesar Selections</a><span>$8.95</span>
                 </div>
                 <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
+                  chicken, cheese, caeser soya, parmissan
                 </div>
               </div>
 
@@ -384,7 +395,7 @@ function Home() {
                   <a href="#">Mozzarella Stick</a><span>$4.95</span>
                 </div>
                 <div className="menu-ingredients">
-                  Lorem, deren, trataro, filede, nerada
+                  cheese, mozzarella, garlic salt , seasoned bread crumbs
                 </div>
               </div>
 
