@@ -141,7 +141,7 @@ function Floor() {
                 <h4>Table number : {floor.name}</h4>
                 <p>Number of seats : {floor.people_count}</p>
                 <p>Price : {floor.price} $</p>
-                <Link to={'/floor/'} className="btn btn mt-auto align-self-start" style={{backgroundColor:'#cda45e',marginTop:'30px'}}>Book Now</Link>
+                <Link to={'/book'} className="btn btn mt-auto align-self-start" style={{backgroundColor:'#cda45e'}}>Book Now</Link>
               </div>
             </div>
 
