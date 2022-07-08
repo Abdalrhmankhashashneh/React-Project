@@ -13,7 +13,7 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Floor from "./pages/Floor";
 import Book from "./pages/Book";
-
+import Update from "./pages/EditProfile";
 
 //import your components here (if you have any)
 import Nav from "./components/Nav";
@@ -182,7 +182,8 @@ export default function AppRoutes() {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/profile" element={<Profile userId={1}/>} />
+                    <Route path="/EditProfile/:id" element={<Update />} />
                     <Route path="/login" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Login />} />
                     <Route path="/register" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Register />} />
                     <Route path="/floor/:id" element={<Floor />} />
