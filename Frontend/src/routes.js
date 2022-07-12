@@ -173,7 +173,7 @@ export default function AppRoutes() {
         <Router> {/* <Router> is a component that wraps your entire app.*/}
 
 
-            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
+            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler  }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
                 <Nav /> {/* <Nav> is a component that renders the nav bar.*/}
 
                 <Routes> {/* <Routes> is a component that renders your routes.*/}
@@ -186,7 +186,7 @@ export default function AppRoutes() {
                     <Route path="/login" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Login />} />
                     <Route path="/register" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Register />} />
                     <Route path="/floor/:id" element={<Floor />} />
-                    <Route path="/book" element={<Book />} />
+                    <Route path="/book/:floor_type_id/:table_id" element={localStorage.getItem('logged_user') ? <Book /> : <Navigate to="/login" />} />
                     <Route path='*' element={<NotFound />} />
 
                 </Routes>

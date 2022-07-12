@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Contact;
+use Validator;
 class Contact_c extends Controller
 {
     /**
@@ -13,7 +14,8 @@ class Contact_c extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::all();
+        return response()->json($contacts);
     }
 
     /**
@@ -24,7 +26,16 @@ class Contact_c extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'name' => 'required|regex:/^[a-z ]+$/i',
+            'email' => 'required|email|unique:contacts',
+            'message' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['validation_errors'=>$validator->errors(),'status'=> 401]);
+        }
+        $contact = Contact::create($request->all());
+        return response()->json($contact, 201);
     }
 
     /**
