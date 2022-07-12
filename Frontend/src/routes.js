@@ -57,7 +57,7 @@ export default function AppRoutes() {
     const registerHandler = (user, navigate) => {
         axios({
             method: 'post',
-            url: 'http://127.0.0.1:8000/api/users/register',
+            url: 'http://127.0.0.1:8000/api/users',
             // headers: {Authorization: 'Bearer ' + 'token'},
             headers: { Accept: 'application/json' },
             data: user
@@ -118,7 +118,13 @@ export default function AppRoutes() {
         error_credential: ''
     })
     const loginHandler = (loginInput, navigate) => {
-        axios.post(`http://127.0.0.1:8000/api/users/login`, loginInput).then(res => {
+        axios({
+            method: 'post',
+            url: 'http://127.0.0.1:8000/api/users/login',
+            // headers: {Authorization: 'Bearer ' + 'token'},
+            //  headers: { Accept: 'application/json' },
+            data: loginInput
+        }).then(res => {
             if (res.data.status === 200) {
                 setLoggin_user({ ...loggin_user, user: localStorage.setItem('logged_user', JSON.stringify(res.data.logged_user)) });
                 // console.log(loggin_user)
