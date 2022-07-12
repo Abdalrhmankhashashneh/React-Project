@@ -165,9 +165,9 @@ export default function AppRoutes() {
         }
     }
     // useEffect(() => {},[logged_user])
-
-
-
+   // const User=JSON.parse(localStorage.getItem('logged_user'));
+//const UserName='';
+//const UserId=User.id;
 
     return (
         <Router> {/* <Router> is a component that wraps your entire app.*/}
@@ -182,7 +182,7 @@ export default function AppRoutes() {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/profile" element={<Profile userId={1}/>} />
+                    <Route path="/profile" element={<Profile />} />
                     <Route path="/EditProfile/:id" element={<Update />} />
                     <Route path="/login" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Login />} />
                     <Route path="/register" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Register />} />

@@ -120,7 +120,9 @@ class User_c extends Controller
             return response()->json(['validation_errors' => $validator->errors()]);
         }
         if( $user ){
-            $user->update($request->all());
+            $user->email=$request->email;
+            //$user->update($request->all());
+            $user->save();
             return response()->json($user);
         }else{
             return response()->json(['message' => 'User not found'], 404);
