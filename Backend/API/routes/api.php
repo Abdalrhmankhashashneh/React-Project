@@ -26,7 +26,7 @@ Route::get('floor_type/{id}', [floor_type_c::class, 'show']); // get all tables 
 Route::post('reservation', [floor_type_c::class, 'store']); // create reservation
 Route::put('user/update/{id}', [User_c::class, 'update']); // update user profile
 Route::post('/users', [User_c::class, 'store']); //register
-// Route::post('/users/{id}', [User_c::class, 'show']); //get user by id
+Route::get('/usersinf/{id}', [User_c::class, 'show']); //get user by id
 
 Route::post('/contact', [Contact_c::class, 'store']); //contact us
 
