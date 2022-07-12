@@ -118,7 +118,13 @@ export default function AppRoutes() {
         error_credential: ''
     })
     const loginHandler = (loginInput, navigate) => {
-        axios.post(`http://127.0.0.1:8000/api/users/login`, loginInput).then(res => {
+        axios({
+            method: 'post',
+            url: 'http://127.0.0.1:8000/api/users/login',
+            // headers: {Authorization: 'Bearer ' + 'token'},
+            //  headers: { Accept: 'application/json' },
+            data: loginInput
+        }).then(res => {
             if (res.data.status === 200) {
                 setLoggin_user({ ...loggin_user, user: localStorage.setItem('logged_user', JSON.stringify(res.data.logged_user)) });
                 // console.log(loggin_user)
@@ -173,7 +179,7 @@ export default function AppRoutes() {
         <Router> {/* <Router> is a component that wraps your entire app.*/}
 
 
-            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
+            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler  }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
                 <Nav /> {/* <Nav> is a component that renders the nav bar.*/}
 
                 <Routes> {/* <Routes> is a component that renders your routes.*/}

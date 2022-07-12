@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-// Route::post('users/register', [Auth_c::class ,'register']); //register user and return token
+Route::post('users/register', [Auth_c::class ,'register']); //register user and return token
 
 Route::get('users/search/{name}', [User_c::class, 'search']); // search for user by name
 Route::get('floor_type', [floor_type_c::class, 'index']); // get all floor_types
@@ -26,6 +26,7 @@ Route::get('floor_type/{id}', [floor_type_c::class, 'show']); // get all tables 
 Route::post('reservation', [floor_type_c::class, 'store']); // create reservation
 Route::put('user/update/{id}', [User_c::class, 'update']); // update user profile
 Route::post('/users', [User_c::class, 'store']); //register
+Route::get('/usersinf/{id}', [User_c::class, 'show']); //get user by id
 
 Route::post('/contact', [Contact_c::class, 'store']); //contact us
 

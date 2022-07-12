@@ -29,11 +29,12 @@ class floor_type_c extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'date' => 'required|date|unique',
-            'time' => 'required|time|unique',
-        ]);
-       $res =  reservation::create($validatedData);
+        // $validatedData = $request->validate([
+        //     'date' => 'required|date|unique',
+        //     'time' => 'required|time|unique',
+        // ]);
+        
+       $res =  reservation::create($request->all());
         return response()->json($res , 201);
     }
 

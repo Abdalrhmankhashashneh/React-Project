@@ -16,7 +16,7 @@ export default function Nav() {
                         <li><NavLink className="nav-link scrollto active" to="/">Home</NavLink></li>
                         <li><NavLink className="nav-link scrollto" to="/about">About</NavLink></li>
                         <li><NavLink className="navlink- scrollto" to="/contact">Contact</NavLink></li>
-                        <li><NavLink className="nav-link scrollto" to="/floor">floor</NavLink></li>
+                       
                         
                         {!localStorage.getItem('logged_user') ? 
                         <>
