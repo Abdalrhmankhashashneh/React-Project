@@ -57,7 +57,7 @@ export default function AppRoutes() {
     const registerHandler = (user, navigate) => {
         axios({
             method: 'post',
-            url: 'http://127.0.0.1:8000/api/users',
+            url: 'http://127.0.0.1:8000/api/users/register',
             // headers: {Authorization: 'Bearer ' + 'token'},
             headers: { Accept: 'application/json' },
             data: user
