@@ -13,7 +13,7 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Floor from "./pages/Floor";
 import Book from "./pages/Book";
-
+import Update from "./pages/EditProfile";
 
 //import your components here (if you have any)
 import Nav from "./components/Nav";
@@ -62,9 +62,10 @@ export default function AppRoutes() {
             headers: { Accept: 'application/json' },
             data: user
         }).then((res) => {
+            console.log(res);
             if (res.data.status === 200) {
 
-                console.log(res.data.user)
+                console.log(res.data.users)
                 console.log(userState.error_list)
                 console.log(userState.user)
                 // localStorage.setItem('user', JSON.stringify(res.data.user))
@@ -171,15 +172,15 @@ export default function AppRoutes() {
         }
     }
     // useEffect(() => {},[logged_user])
-
-
-
+   // const User=JSON.parse(localStorage.getItem('logged_user'));
+//const UserName='';
+//const UserId=User.id;
 
     return (
         <Router> {/* <Router> is a component that wraps your entire app.*/}
 
 
-            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler  }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
+            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
                 <Nav /> {/* <Nav> is a component that renders the nav bar.*/}
 
                 <Routes> {/* <Routes> is a component that renders your routes.*/}
@@ -189,6 +190,7 @@ export default function AppRoutes() {
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/profile" element={<Profile />} />
+                    <Route path="/EditProfile/:id" element={<Update />} />
                     <Route path="/login" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Login />} />
                     <Route path="/register" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Register />} />
                     <Route path="/floor/:id" element={<Floor />} />

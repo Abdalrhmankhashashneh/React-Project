@@ -24,7 +24,11 @@ export default function Nav() {
                         <li><NavLink className="nav-link scrollto" to="/register">Register</NavLink></li>
                         </>
                         :
+                        <>
+                          <li><NavLink className="nav-link scrollto" to="/profile">Profile</NavLink></li>
                         <li><button className="nav-link scrollto logout" onClick={logoutHandler}>Logout</button></li>
+                      
+                        </>
                         }
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle"></i>
