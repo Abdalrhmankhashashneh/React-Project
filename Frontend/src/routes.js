@@ -62,9 +62,10 @@ export default function AppRoutes() {
             headers: { Accept: 'application/json' },
             data: user
         }).then((res) => {
+            console.log(res);
             if (res.data.status === 200) {
 
-                console.log(res.data.user)
+                console.log(res.data.users)
                 console.log(userState.error_list)
                 console.log(userState.user)
                 // localStorage.setItem('user', JSON.stringify(res.data.user))
@@ -179,7 +180,7 @@ export default function AppRoutes() {
         <Router> {/* <Router> is a component that wraps your entire app.*/}
 
 
-            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler  }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
+            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
                 <Nav /> {/* <Nav> is a component that renders the nav bar.*/}
 
                 <Routes> {/* <Routes> is a component that renders your routes.*/}
