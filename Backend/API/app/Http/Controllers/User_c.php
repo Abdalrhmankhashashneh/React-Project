@@ -63,8 +63,7 @@ class User_c extends Controller
 
         if($validator->fails()){
             return response()->json(['validation_errors' => $validator->errors()]);
-        }
-        else {
+        }else {
 
             $user = new User();
             $user->name = $request->name;
