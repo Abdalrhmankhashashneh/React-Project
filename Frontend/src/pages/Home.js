@@ -5,7 +5,18 @@ import { useState } from 'react';
 import axios from 'axios'
 
 function Home() {
-  const [floor, setFloor] = useState([]);
+
+
+  useEffect(()=>{
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+},[])
+
+
+  const [floor , setFloor]=useState([]);
   const { state } = useContext(AppContext);
   console.log(state);
 

@@ -129,8 +129,8 @@ export default function AppRoutes() {
             if (res.data.status === 200) {
                 setLoggin_user({ ...loggin_user, user: localStorage.setItem('logged_user', JSON.stringify(res.data.logged_user)) });
                 // console.log(loggin_user)
-                // console.log(JSON.parse(localStorage.getItem('user')))
-                // console.log(JSON.parse(localStorage.getItem('user')).id)
+                // console.log(JSON.parse(localStorage.getItem('logged_user')))
+                // console.log(JSON.parse(localStorage.getItem('logged_user')).id)
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
@@ -158,7 +158,7 @@ export default function AppRoutes() {
     const [logged_user, setLogged_user] = useState(true)
     // console.log(logged_user)
     const logoutHandler = (e) => {
-        setLogged_user(!logged_user)
+        // setLogged_user(!logged_user)
         setLoggin_user({ ...loggin_user, user: {} })
         localStorage.removeItem('logged_user')
         // if (!logged_user) {

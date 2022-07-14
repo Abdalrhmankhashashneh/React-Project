@@ -1,7 +1,14 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "react-bootstrap": "^2.4.0",
+=======
+<<<<<<< HEAD
+    "semantic-ui-react": "^2.1.3",
+=======
+>>>>>>> 2353dcc7124b3264684f7b1f1f6d4483c5586dc1
     "react-scripts": "^5.0.1",
+>>>>>>> 0bbe5e6877d0fe9f58663d8a959ace3d28a211b0
     "sweetalert2": "^11.4.20"
   }
 }
