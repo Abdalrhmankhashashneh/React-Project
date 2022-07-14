@@ -50,7 +50,7 @@ const Profile = (props) => {
               <div class="card" style={{ backgroundColor: 'rgba(12, 11, 9, 0.6)' }}>
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://www.huvrdata.com/wp-content/uploads/2019/11/default-user-image-500x500.png" alt="Admin" class="rounded-circle" width="150"></img>
+                    <img src="https://cdn.business2community.com/wp-content/uploads/2014/08/My_profile-orange.png" alt="Admin" class="rounded-circle" width="150"></img>
                     <div class="mt-3">
                       <h4>{user.name}</h4>
                       <div class="row">

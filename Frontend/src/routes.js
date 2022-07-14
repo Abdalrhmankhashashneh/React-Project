@@ -195,7 +195,7 @@ export default function AppRoutes() {
                     <Route path="/login" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Login />} />
                     <Route path="/register" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Register />} />
                     <Route path="/floor/:id" element={<Floor />} />
-                    <Route path="/book/:floor_type_id/:table_id" element={localStorage.getItem('logged_user') ? <Book /> : <Navigate to="/login" />} />
+                    <Route path="/book/:floor_type_id/:table_id/:people_count" element={localStorage.getItem('logged_user') ? <Book /> : <Navigate to="/login" />} />
                     <Route path='*' element={<NotFound />} />
                     
                 </Routes>
