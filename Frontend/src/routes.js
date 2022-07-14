@@ -63,9 +63,10 @@ export default function AppRoutes() {
             headers: { Accept: 'application/json' },
             data: user
         }).then((res) => {
+            console.log(res);
             if (res.data.status === 200) {
 
-                console.log(res.data.user)
+                console.log(res.data.users)
                 console.log(userState.error_list)
                 console.log(userState.user)
                 // localStorage.setItem('user', JSON.stringify(res.data.user))
@@ -129,8 +130,8 @@ export default function AppRoutes() {
             if (res.data.status === 200) {
                 setLoggin_user({ ...loggin_user, user: localStorage.setItem('logged_user', JSON.stringify(res.data.logged_user)) });
                 // console.log(loggin_user)
-                // console.log(JSON.parse(localStorage.getItem('user')))
-                // console.log(JSON.parse(localStorage.getItem('user')).id)
+                // console.log(JSON.parse(localStorage.getItem('logged_user')))
+                // console.log(JSON.parse(localStorage.getItem('logged_user')).id)
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
@@ -158,29 +159,29 @@ export default function AppRoutes() {
     const [logged_user, setLogged_user] = useState(true)
     // console.log(logged_user)
     const logoutHandler = (e) => {
-        setLogged_user(!logged_user)
+        // setLogged_user(!logged_user)
         setLoggin_user({ ...loggin_user, user: {} })
         localStorage.removeItem('logged_user')
-        if (!logged_user) {
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: `Logged Out successfully`,
-                showConfirmButton: false,
-                timer: 1500
-            });
-        }
+        // if (!logged_user) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `Logged Out successfully`,
+            showConfirmButton: false,
+            timer: 1500
+        });
+        // }
     }
     // useEffect(() => {},[logged_user])
-   // const User=JSON.parse(localStorage.getItem('logged_user'));
-//const UserName='';
-//const UserId=User.id;
+    // const User=JSON.parse(localStorage.getItem('logged_user'));
+    //const UserName='';
+    //const UserId=User.id;
 
     return (
         <Router> {/* <Router> is a component that wraps your entire app.*/}
 
 
-            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler  }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
+            <AppContext.Provider value={{ userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user, setLoggin_user, loginHandler }}> {/* <AppContext.Provider> is a component that provides the context for your app.*/}
                 <Nav /> {/* <Nav> is a component that renders the nav bar.*/}
 
                 <Routes> {/* <Routes> is a component that renders your routes.*/}
