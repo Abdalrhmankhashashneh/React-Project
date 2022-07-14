@@ -5,6 +5,10 @@ import { AppContext } from "../Hooks/appContext";
 export default function Nav() {
     const { userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user,setLoggin_user, loginHandler } = useContext(AppContext);
 
+    const clickHandler = () => {
+        setLogged_user(!logged_user);
+        logoutHandler();
+    }
     return (
         <header id="header" className="fixed-top d-flex align-items-cente">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
@@ -24,7 +28,7 @@ export default function Nav() {
                         <li><NavLink className="nav-link scrollto" to="/register">Register</NavLink></li>
                         </>
                         :
-                        <li><button className="nav-link scrollto logout" onClick={logoutHandler}>Logout</button></li>
+                        <li><button className="nav-link scrollto logout" onClick={clickHandler}>Logout</button></li>
                         }
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle"></i>
