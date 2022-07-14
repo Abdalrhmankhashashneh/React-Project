@@ -50,7 +50,7 @@ const Profile = (props) => {
               <div class="card" style={{ backgroundColor: 'rgba(12, 11, 9, 0.6)' }}>
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150"></img>
+                    <img src="https://www.huvrdata.com/wp-content/uploads/2019/11/default-user-image-500x500.png" alt="Admin" class="rounded-circle" width="150"></img>
                     <div class="mt-3">
                       <h4>{user.name}</h4>
                       <div class="row">

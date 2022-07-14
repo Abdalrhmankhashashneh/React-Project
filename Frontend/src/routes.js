@@ -15,6 +15,7 @@ import Floor from "./pages/Floor";
 import Book from "./pages/Book";
 import Update from "./pages/EditProfile";
 
+
 //import your components here (if you have any)
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -195,7 +196,7 @@ export default function AppRoutes() {
                     <Route path="/floor/:id" element={<Floor />} />
                     <Route path="/book/:floor_type_id/:table_id" element={localStorage.getItem('logged_user') ? <Book /> : <Navigate to="/login" />} />
                     <Route path='*' element={<NotFound />} />
-
+                    
                 </Routes>
 
                 <Footer />  {/* <Footer> is a component that renders the footer.*/}

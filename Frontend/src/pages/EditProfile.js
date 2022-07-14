@@ -64,17 +64,24 @@ export default function Update(props) {
     const updateAPIData = (e) => {
         e.preventDefault();
         console.log(Newname)
-        axios.put(`http://127.0.0.1:8000/api/user/update/${ID}`, {
-            id: Id,
-            name: Newname,
-            email: email,
-            phone: phone,
-            password: Password
-
+        const user = {
+            name : Newname,
+            email : email , 
+            phone : phone
+        };
+        
+        axios(    
+        {
+            method : 'put',
+            url : `http://127.0.0.1:8000/api/user/update/${ID}`,
+          Headers: {Accept : 'applcation/json' }, 
+            data: user 
+        }
+        ).then((res)=>{
+            console.log(res)
         })
-
+        
         window.alert('Your Information Updated Successfully')
-
         navigate('/profile')
         // Redirect.to="/profile" 
         // window.location.href = '/profile'
