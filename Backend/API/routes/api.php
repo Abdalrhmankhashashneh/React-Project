@@ -36,4 +36,6 @@ Route::post('/users/login', [User_c::class, 'Login']); // login
 
 Route::group(['middleware' => [ 'auth:sanctum' ]], function () { // auth:sanctum is the token
     Route::post('users/logout', [Auth_c::class ,'logout']); // logout
+
+
 }); // end of group

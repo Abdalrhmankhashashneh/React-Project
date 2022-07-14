@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
-import {NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AppContext } from '../Hooks/appContext';
-import {useState} from 'react' ;
+import { useState } from 'react';
 import axios from 'axios'
 
 function Home() {
@@ -20,20 +20,21 @@ function Home() {
   const { state } = useContext(AppContext);
   console.log(state);
 
-  useEffect(()=>{axios('http://127.0.0.1:8000/api/floor_type').then((res)=>{
-    setFloor(res.data);
-    console.log(res);
-   
-
-})
-},[]);
+  useEffect(() => {
+    axios('http://127.0.0.1:8000/api/floor_type').then((res) => {
+      setFloor(res.data);
+      console.log(res);
 
 
-  
+    })
+  }, []);
+
+
+
   return (
-    <> 
+    <>
 
- 
+
 
 
       <section id="hero" className="d-flex align-items-center">
@@ -51,7 +52,7 @@ function Home() {
             </div>
             <div className="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
               <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" className="glightbox play-btn"></a>
-            </div> 
+            </div>
 
 
 
@@ -101,40 +102,40 @@ function Home() {
               <h2>Floors</h2>
               <p>Check Out Floors</p>
             </div>
- 
+
             <div className="row">
-          
-          
-             {floor.map((item)=>(
-        
-            
-                
-              <div className="col-lg-4" > 
-               <NavLink to ={`floor/${item.id}`}>
-                   
-                <div className="box" data-aos="zoom-in" data-aos-delay="100" style={{height:'300px'}}>  
-              
-                
-                
 
-                  <span>{item.img}</span>
-                  <h4>{item.name}</h4>
-                  <p>{item.description}</p>
-                  
-                </div>  </NavLink>
-                </div>  
-                   
 
-                  
-            ))}  
-          
-              
-            
-                   
-                
-            
+              {floor.map((item) => (
 
-{/* 
+
+
+                <div className="col-lg-4" >
+                  <NavLink to={`floor/${item.id}`}>
+
+                    <div className="box" data-aos="zoom-in" data-aos-delay="100" style={{ height: '300px' }}>
+
+
+
+
+                      <span>{item.img}</span>
+                      <h4>{item.name}</h4>
+                      <p>{item.description}</p>
+
+                    </div>  </NavLink>
+                </div>
+
+
+
+              ))}
+
+
+
+
+
+
+
+              {/* 
               //  <div className="col-lg-4 mt-4 mt-lg-0">
               // <Link to="/floor">
               //   <div className="box" data-aos="zoom-in" data-aos-delay="200">
@@ -161,7 +162,7 @@ function Home() {
         </section>
 
 
-        
+
 
 
         <section id="specials" className="specials">
@@ -249,7 +250,7 @@ function Home() {
                         <p className="fst-italic">Cobb shared the dish with his friend, Sid Grauman of the even-more legendary Grauman's Chinese Theatre, and the next day, Grauman came back asking for a "Cobb Salad."</p>
                         <p>In 1937, the everything-but-the-kitchen-sink dish was officially added to the restaurant's menu, and stars like Spencer Tracy, Clark Gable, and Lucille Ball were gobbling it up.
 
-</p>
+                        </p>
                       </div>
                       <div className="col-lg-4 text-center order-1 order-lg-2">
                         <img src="assets/img/specials-5.png" alt="" className="img-fluid" />
@@ -482,7 +483,7 @@ function Home() {
 
 
 
-         {/* <section id="book-a-table" className="book-a-table">
+        {/* <section id="book-a-table" className="book-a-table">
           <div className="container" data-aos="fade-up">
 
             <div className="section-title">
@@ -696,7 +697,7 @@ function Home() {
           </div>
         </section> */}
 
-{/* 
+        {/* 
         <section id="chefs" className="chefs">
           <div className="container" data-aos="fade-up">
 

@@ -161,20 +161,20 @@ export default function AppRoutes() {
         // setLogged_user(!logged_user)
         setLoggin_user({ ...loggin_user, user: {} })
         localStorage.removeItem('logged_user')
-        
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: `Logged Out successfully`,
-                showConfirmButton: false,
-                timer: 1500
-            });
-        
+        // if (!logged_user) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `Logged Out successfully`,
+            showConfirmButton: false,
+            timer: 1500
+        });
+        // }
     }
     // useEffect(() => {},[logged_user])
-   // const User=JSON.parse(localStorage.getItem('logged_user'));
-//const UserName='';
-//const UserId=User.id;
+    // const User=JSON.parse(localStorage.getItem('logged_user'));
+    //const UserName='';
+    //const UserId=User.id;
 
     return (
         <Router> {/* <Router> is a component that wraps your entire app.*/}
