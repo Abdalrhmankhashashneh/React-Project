@@ -26,7 +26,9 @@ function Home() {
    
 
 })
-},[])
+},[]);
+
+
   
   return (
     <> 

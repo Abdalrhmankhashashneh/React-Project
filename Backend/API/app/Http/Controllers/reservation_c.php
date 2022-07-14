@@ -25,6 +25,7 @@ class reservation_c extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**

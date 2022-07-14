@@ -13,7 +13,7 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Floor from "./pages/Floor";
 import Book from "./pages/Book";
-
+import Update from "./pages/EditProfile";
 
 //import your components here (if you have any)
 import Nav from "./components/Nav";
@@ -62,9 +62,10 @@ export default function AppRoutes() {
             headers: { Accept: 'application/json' },
             data: user
         }).then((res) => {
+            console.log(res);
             if (res.data.status === 200) {
 
-                console.log(res.data.user)
+                console.log(res.data.users)
                 console.log(userState.error_list)
                 console.log(userState.user)
                 // localStorage.setItem('user', JSON.stringify(res.data.user))
@@ -118,7 +119,13 @@ export default function AppRoutes() {
         error_credential: ''
     })
     const loginHandler = (loginInput, navigate) => {
-        axios.post(`http://127.0.0.1:8000/api/users/login`, loginInput).then(res => {
+        axios({
+            method: 'post',
+            url: 'http://127.0.0.1:8000/api/users/login',
+            // headers: {Authorization: 'Bearer ' + 'token'},
+            //  headers: { Accept: 'application/json' },
+            data: loginInput
+        }).then(res => {
             if (res.data.status === 200) {
                 setLoggin_user({ ...loggin_user, user: localStorage.setItem('logged_user', JSON.stringify(res.data.logged_user)) });
                 // console.log(loggin_user)
@@ -164,10 +171,10 @@ export default function AppRoutes() {
             });
         
     }
-
-
-
-
+    // useEffect(() => {},[logged_user])
+   // const User=JSON.parse(localStorage.getItem('logged_user'));
+//const UserName='';
+//const UserId=User.id;
 
     return (
         <Router> {/* <Router> is a component that wraps your entire app.*/}
@@ -183,6 +190,7 @@ export default function AppRoutes() {
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/profile" element={<Profile />} />
+                    <Route path="/EditProfile/:id" element={<Update />} />
                     <Route path="/login" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Login />} />
                     <Route path="/register" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Register />} />
                     <Route path="/floor/:id" element={<Floor />} />

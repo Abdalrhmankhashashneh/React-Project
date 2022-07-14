@@ -5,22 +5,28 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Hash ;
+use Validator;
 class Auth_c extends Controller
 {
      public function register(Request $request)
     {
-        $filed = $request->validate([
-            'name' => 'required',
+        $validator = Validator::make($request->all(),[
+            'name' => 'required|regex:/^[a-z ]+$/i',
             'email' => 'required|email|unique:users',
-            'phone' => 'required|unique:users',
-            'password' => 'required|min:6',
+            'phone' => 'required|unique:users|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'password' => ['required',  'min:8', 'regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/'],
         ]);
+
+        if($validator->fails()){
+            return response()->json(['validation_errors' => $validator->errors()]);
+        }
+
         $user = User::create(
             [
-                'name' => $filed['name'],
-                'email' => $filed['email'],
-                'phone' => $filed['phone'],
-                'password' => Hash::make($filed['password']),
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'phone' => $request->input('phone'),
+                'password' => Hash::make($request->input('password')),
                 ]
 
         );
