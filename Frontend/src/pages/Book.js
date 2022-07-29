@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 export default function Book() {
   const { floor_type_id } = useParams();
   const { table_id } = useParams();
+  const { people_count } = useParams();
   console.log(table_id);
   useEffect(() => {
     window.scroll({
@@ -84,6 +85,7 @@ export default function Book() {
 
 
   const handelChange = (e) => {
+ 
     setBook({
       ...book,
       book: {
@@ -93,7 +95,20 @@ export default function Book() {
     });
 
   }
+  const disablePastDate = () => {
+    const today = new Date();
+    const dd = String(today.getDate() ).padStart(2, "0");
+    const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+    const yyyy = today.getFullYear();
+    return yyyy + "-" + mm + "-" + dd;
+  };
 
+ const onKeyPressed=(e)=>{
+ e.preventDefault()
+}
+
+
+console.log(book.book.people_count)
   return (
     <section id="book-a-table" className="book-a-table" style={{ marginTop: '110px' }} >
       <div className="container" data-aos="fade-up">
@@ -122,17 +137,17 @@ export default function Book() {
             </div>
             <div className="col-lg-4 col-md-6 form-group mt-3">
               <label>Date :</label>
-              <input type="date" name="date" value={book.book.date} className="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars" onChange={handelChange} />
+              <input type="date" name="date" value={book.book.date} required className="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars" onChange={handelChange} min={disablePastDate()} onKeyDown={onKeyPressed} />
               <div className="validate"></div>
             </div>
             <div className="col-lg-4 col-md-6 form-group mt-3" >
               <label>Time :</label>
-              <input type="time" className="form-control" value={book.book.time} name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars" onChange={handelChange} />
+              <input type="time" className="form-control" value={book.book.time} required name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars" onChange={handelChange} onKeyDown={onKeyPressed}  />
               <div className="validate"></div>
             </div>
             <div className="col-lg-4 col-md-6 form-group mt-3">
               <label>People :</label>
-              <input type="number" className="form-control" value={book.book.people_count} name="people_count" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars" onChange={handelChange} />
+              <input type="number" className="form-control" value={book.book.people_count} required name="people_count" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars" onChange={handelChange} max={people_count} />
               <div className="validate"></div>
             </div>
           </div>

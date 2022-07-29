@@ -50,9 +50,11 @@ function Home() {
                 <a href="/floor" className="btn-book animated fadeInUp scrollto">Book a Table</a>
               </div>
             </div>
-            <div className="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-              <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" className="glightbox play-btn"></a>
-            </div>
+{/* 
+            <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+        </div> */}
+        
 
 
 
@@ -99,8 +101,8 @@ function Home() {
           <div className="container" data-aos="fade-up">
 
             <div className="section-title">
-              <h2>Floors</h2>
-              <p>Check Out Floors</p>
+              <h2>Services</h2>
+              <p>Our Servicess</p>
             </div>
 
             <div className="row">
@@ -118,8 +120,8 @@ function Home() {
 
 
 
-                      <span>{item.img}</span>
-                      <h4>{item.name}</h4>
+                      <span>{item.name}</span>
+                      <h4>{item.img}</h4>
                       <p>{item.description}</p>
 
                     </div>  </NavLink>
@@ -547,7 +549,7 @@ function Home() {
                   <div className="testimonial-item">
                     <p>
                       <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                      BEST RESTURANT 
                       <i className="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
                     <img src="assets/img/testimonials/testimonials-1.jpg" className="testimonial-img" alt="" />
@@ -609,6 +611,13 @@ function Home() {
               </div>
               <div className="swiper-pagination"></div>
             </div>
+
+
+
+
+
+ 
+ 
 
           </div>
         </section>

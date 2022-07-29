@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import Carousel from 'react-bootstrap/Carousel';
 export default function About() {
   useEffect(()=>{
     window.scroll({
@@ -59,12 +60,12 @@ A special view of our restaurant to give you a sense of comfort</li>
                       <h4>Walter White</h4>
                       <span>Master Chef</span>
                     </div>
-                    <div className="social">
+                    {/* <div className="social">
                       <a href=""><i className="bi bi-twitter"></i></a>
                       <a href=""><i className="bi bi-facebook"></i></a>
                       <a href=""><i className="bi bi-instagram"></i></a>
                       <a href=""><i className="bi bi-linkedin"></i></a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -77,12 +78,12 @@ A special view of our restaurant to give you a sense of comfort</li>
                       <h4>Sarah Jhonson</h4>
                       <span>Patissier</span>
                     </div>
-                    <div className="social">
+                    {/* <div className="social">
                       <a href=""><i className="bi bi-twitter"></i></a>
                       <a href=""><i className="bi bi-facebook"></i></a>
                       <a href=""><i className="bi bi-instagram"></i></a>
                       <a href=""><i className="bi bi-linkedin"></i></a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -95,12 +96,12 @@ A special view of our restaurant to give you a sense of comfort</li>
                       <h4>William Anderson</h4>
                       <span>Cook</span>
                     </div>
-                    <div className="social">
+                    {/* <div className="social">
                       <a href=""><i className="bi bi-twitter"></i></a>
                       <a href=""><i className="bi bi-facebook"></i></a>
                       <a href=""><i className="bi bi-instagram"></i></a>
                       <a href=""><i className="bi bi-linkedin"></i></a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -114,7 +115,30 @@ A special view of our restaurant to give you a sense of comfort</li>
 
         <section id="gallery" className="gallery">
 
-          <div className="container" data-aos="fade-up">
+        <Carousel  >
+      <Carousel.Item interval={1000}>
+        <img
+          className="d-block w-100"
+          src="assets/img/gallery/gallery-6.jpg"
+          alt="First slide"
+        />
+        </ Carousel.Item>
+      <Carousel.Item interval={500}>
+        <img
+          className="d-block w-100"
+          src="assets/img/gallery/gallery-2.jpg"
+          alt="Second slide"
+        />
+         </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="assets/img/gallery/gallery-1.jpg"
+          alt="Third slide"
+        />
+         </Carousel.Item>
+    </Carousel>
+          {/* <div className="container" data-aos="fade-up">
             <div className="section-title">
               <h2>Gallery</h2>
               <p>Some photos from Our Restaurant</p>
@@ -191,7 +215,7 @@ A special view of our restaurant to give you a sense of comfort</li>
 
             </div>
 
-          </div>
+          </div> */}
         </section>
         
 </>

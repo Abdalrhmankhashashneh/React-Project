@@ -45,6 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #1a1814;
 }
 
+
 #preloader:before {
   content: "";
   position: fixed;
@@ -1263,6 +1264,10 @@ section {
   background: #d3af71;
 }
 
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
