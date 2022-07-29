@@ -128,7 +128,8 @@ export default function AppRoutes() {
             data: loginInput
         }).then(res => {
             if (res.data.status === 200) {
-                setLoggin_user({ ...loggin_user, user: localStorage.setItem('logged_user', JSON.stringify(res.data.logged_user)) });
+                localStorage.setItem('logged_user', JSON.stringify(res.data.logged_user))
+                setLoggin_user({ ...loggin_user, user: JSON.parse(localStorage.getItem('logged_user')) });
                 // console.log(loggin_user)
                 // console.log(JSON.parse(localStorage.getItem('logged_user')))
                 // console.log(JSON.parse(localStorage.getItem('logged_user')).id)
