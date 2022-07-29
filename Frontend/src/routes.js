@@ -28,7 +28,7 @@ import { AppContext } from "./Hooks/appContext";
 
 export default function AppRoutes() {
 
-
+    
     //create your global state here (e.g. const [state, setState] = useState({});)
     const [userState, setUser] = useState({
         user: {
@@ -157,7 +157,7 @@ export default function AppRoutes() {
 
     const [logged_user, setLogged_user] = useState(true)
     // console.log(logged_user)
-    const logoutHandler = (e) => {
+    const logoutHandler = (navigate) => {
         // setLogged_user(!logged_user)
         setLoggin_user({ ...loggin_user, user: {} })
         localStorage.removeItem('logged_user')
@@ -170,6 +170,7 @@ export default function AppRoutes() {
             timer: 1500
         });
         // }
+        navigate('/')
     }
     // useEffect(() => {},[logged_user])
     // const User=JSON.parse(localStorage.getItem('logged_user'));
@@ -189,7 +190,7 @@ export default function AppRoutes() {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/profile" element={localStorage.getItem('logged_user') ? <Profile />: <Navigate to="/login" />} />
                     <Route path="/EditProfile/:id" element={<Update />} />
                     <Route path="/login" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Login />} />
                     <Route path="/register" element={localStorage.getItem('logged_user') ? <Navigate to="/" /> : <Register />} />

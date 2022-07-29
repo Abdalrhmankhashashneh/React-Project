@@ -1,13 +1,15 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../css/main.css';
 import { useContext } from "react";
 import { AppContext } from "../Hooks/appContext";
 export default function Nav() {
     const { userState, setUser, registerHandler, logged_user, setLogged_user, logoutHandler, loggin_user,setLoggin_user, loginHandler } = useContext(AppContext);
 
-    const clickHandler = () => {
+    const navigate = useNavigate();
+    const clickHandler = (e) => {
+        e.preventDefault();
         setLogged_user(!logged_user);
-        logoutHandler();
+        logoutHandler(navigate);
     }
     return (
         <header id="header" className="fixed-top d-flex align-items-cente">
@@ -30,7 +32,7 @@ export default function Nav() {
                         :
                         <>
                           <li><NavLink className="nav-link scrollto" to="/profile">Profile</NavLink></li>
-                        <li><button className="nav-link scrollto logout" onClick={logoutHandler}>Logout</button></li>
+                        <li><button className="nav-link scrollto logout" onClick={clickHandler}>Logout</button></li>
                       
                         </>
                         }

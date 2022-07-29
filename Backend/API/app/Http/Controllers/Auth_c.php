@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+// use Hash ;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Hash ;
-use Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+
 class Auth_c extends Controller
 {
      public function register(Request $request)
