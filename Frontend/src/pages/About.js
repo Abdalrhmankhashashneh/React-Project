@@ -115,7 +115,7 @@ A special view of our restaurant to give you a sense of comfort</li>
 
         <section id="gallery" className="gallery">
 
-        <Carousel  >
+        {/* <Carousel  >
       <Carousel.Item interval={1000}>
         <img
           className="d-block w-100"
@@ -137,8 +137,8 @@ A special view of our restaurant to give you a sense of comfort</li>
           alt="Third slide"
         />
          </Carousel.Item>
-    </Carousel>
-          {/* <div className="container" data-aos="fade-up">
+    </Carousel> */}
+          <div className="container" data-aos="fade-up">
             <div className="section-title">
               <h2>Gallery</h2>
               <p>Some photos from Our Restaurant</p>
@@ -215,7 +215,7 @@ A special view of our restaurant to give you a sense of comfort</li>
 
             </div>
 
-          </div> */}
+          </div>
         </section>
         
 </>
